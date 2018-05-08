@@ -1,0 +1,27 @@
+.logo{
+  align-items: center;
+  display: flex;
+}
+
+.logo img{
+  width: 48px;
+  height: 48px;
+}
+
+.logo span{
+  font-size: 24px;
+  padding-left: 5px;
+}
+
+.footer{
+  text-align: center;
+}
+
+.register{
+  float: right !important;
+}
+
+.ant-menu-horizontal > .ant-menu-item > a, .ant-menu-horizontal > .ant-menu-submenu > a
+{
+  display: inline-block !important;
+}
