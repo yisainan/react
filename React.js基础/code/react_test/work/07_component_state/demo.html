@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>07_state_demo</title>
+</head>
+<body>
+  <div>
+    <h2>Simple TODO List</h2>
+    <input type="text">
+    <button>Add #4</button>
+    <ul>
+      <li>吃饭</li>
+      <li>睡觉</li>
+      <li>打豆豆</li>
+    </ul>
+  </div>
+  <hr>
+
+  <div id="example">在此实现页面效果和功能</div>
+
+  <script src="../js/react.js"></script>
+  <script src="../js/react-dom.js"></script>
+  <script src="../js/babel.min.js"></script>
+  <script type="text/babel">
+    /*
+    功能: 组件化实现此功能
+      1. 界面显示如上所示
+      2. 输入文本, 点击按钮显示到下面列表的首位, 并清除输入的文本
+     */
+    /*
+    分解组件:
+      列表: TodoList
+        props: todos
+      应用: App
+        state: todos, inputTodo
+     */
+    /*
+    问题: 完善功能
+      1). 如果没有输入或输入的只是空格, 不添加到列表
+      2). 如果输入的文本两边有空格, 去掉空格后添加
+    */
+
+  </script>
+</body>
+</html>
+

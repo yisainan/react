@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>02_JSX</title>
+</head>
+<body>
+<!--
+1. 虚拟DOM
+  1). React提供了一些API来创建一种 `特别` 的一般js对象
+    * var element = React.createElement('h1', {id:'myTitle'}, 'hello');
+    * 上面创建的就是一个简单的虚拟DOM对象
+  2). 虚拟DOM对象最终都会被React转换为真实的DOM
+  3). 我们编码时基本只需要操作react的虚拟DOM相关数据, react会转换为真实DOM变化而更新界面
+2. JSX
+  1). 全称: JavaScript XML
+  2). react定义的一种类似于XML的JS扩展语法: XML+JS
+  3). 作用: 用来创建react虚拟DOM(元素)对象
+    * var ele = <h1>Hello JSX!</h1>;
+    * 注意1: 它不是字符串, 也不是HTML/XML标签
+    * 注意2: 它最终产生的就是一个JS对象
+  4). 标签名任意: HTML标签或其它标签
+  5). 标签属性任意: HTML标签属性或其它
+  6). 基本语法规则
+    * 遇到 <开头的代码, 以标签的语法解析: html同名标签转换为html同名元素, 其它标签需要特别解析
+    * 遇到以 { 开头的代码，以JS的语法解析: 标签中的js代码必须用{}包含
+  7). babel.js的作用
+    * 浏览器的js引擎是不能直接解析JSX语法代码的, 需要babel转译为纯JS的代码才能运行
+    * 只要用了JSX，都要加上type="text/babel", 声明需要babel来处理
+3. 渲染虚拟DOM(元素)
+  1). 语法: ReactDOM.render(virtualDOM, containerDOM) :
+  2). 作用: 将虚拟DOM元素渲染到真实容器DOM中显示
+  3). 参数说明
+    * 参数一: 纯js或jsx创建的虚拟dom对象
+    * 参数二: 用来包含虚拟DOM元素的真实dom元素对象(一般是一个div)
+4. 创建虚拟DOM的2种方式:
+  1). 纯JS(一般不用):
+    React.createElement('h1', {id:'myTitle'}, title)
+  2). JSX:
+    <h1 id='myTitle'>{title}</h1>
+-->
+<div id="example1"></div>
+<div id="example2"></div>
+
+</body>
+</html>

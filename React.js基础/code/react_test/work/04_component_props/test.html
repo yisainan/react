@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>04_component_props</title>
+</head>
+<body>
+
+<ul>
+  <li>姓名: 张三</li>
+  <li>性别: 女</li>
+  <li>年龄: 23</li>
+</ul>
+<hr>
+
+<div id="example"></div>
+<div id="example2"></div>
+
+<script src="../js/react.js"></script>
+<script src="../js/react-dom.js"></script>
+<script src="../js/babel.min.js"></script>
+
+<script type="text/babel">
+  /*
+  组件3大属性之一: props属性
+  1. 每个组件对象都会有props(properties的简写)属性
+  2. 组件标签的所有属性都保存在props中
+  3. 内部读取某个属性值: this.props.propertyName
+  4. 作用: 通过标签属性从组件外向组件内传递数据(只读)
+  5. 对props中的属性值进行类型限制和必要性限制
+    Person.propTypes = {
+      name: React.PropTypes.string.isRequired,
+      age: React.PropTypes.number.isRequired
+    }
+  6. 扩展属性: 将对象的所有属性通过props传递
+    <Person {...person}/>
+  7. 默认属性值
+    Person.defaultProps = {
+      name: 'Mary'
+    };
+  8. 组件类的构造函数
+    constructor (props) {
+      super(props);
+      console.log(props); // 查看所有属性
+    }
+
+  问题: 为什么要设计对prop会进行约束的语法?
+  */
+
+  /*
+  需求: 自定义用来显示一个人员信息的组件, 效果如页面. 说明
+    1). 如果性别没有指定, 默认为男
+    2). 如果年龄没有指定, 默认为18
+  */
+
+</script>
+</body>
+</html>
+

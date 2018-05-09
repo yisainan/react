@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>10_ComponentLife</title>
+</head>
+<body>
+
+<div id="example"></div>
+
+<script src="../js/react.js"></script>
+<script src="../js/react-dom.js"></script>
+<script src="../js/babel.min.js"></script>
+<script type="text/babel">
+  /*
+  1. 组件的三个生命周期状态:
+    * Mount：插入真实 DOM
+    * Update：被重新渲染
+    * Unmount：被移出真实 DOM
+  2. React 为每个状态都提供了两种勾子(hook)函数，will 函数在进入状态之前调用，did 函数在进入状态之后调用
+    * componentWillMount()
+    * componentDidMount() : 已插入真实DOM, 在render之后才会执行
+    * componentWillUpdate(object nextProps, object nextState)
+    * componentDidUpdate(object prevProps, object prevState)
+    * componentWillUnmount()
+  3. 生命周期流程:
+    1). 第一次初始化渲染显示: render()
+      * constructor(): 创建对象初始化state
+      * componentWillMount() : 将要插入回调
+      * render() : 用于插入虚拟DOM回调
+      * componentDidMount() : 已经插入回调
+    2). 每次更新state: this.setSate()
+      * componentWillUpdate() : 将要更新回调
+      * render() : 更新(重新渲染)
+      * componentDidUpdate() : 已经更新回调
+    3). 删除组件
+      * ReactDOM.unmountComponentAtNode(document.getElementById('example')) : 移除组件
+      * componentWillUnmount() : 组件将要被移除回调
+  4.注意:
+    * 一般会在componentDidMount()中: 开启监听, 发送ajax请求
+    * 可以在componentWillUnmount()做一些收尾工作: 停止监听
+    * 生命周期还有一个方法(后面需要时讲): componentWillReceiveProps
+  */
+</script>
+</body>
+</html>

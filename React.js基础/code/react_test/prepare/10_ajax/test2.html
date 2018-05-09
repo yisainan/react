@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>12_ajax</title>
+</head>
+<body>
+<div id="example"></div>
+
+<script src="../js/react.js"></script>
+<script src="../js/react-dom.js"></script>
+<script src="../js/babel.min.js"></script>
+<script src="//cdn.bootcss.com/axios/0.15.3/axios.min.js"></script>
+
+<script type="text/babel">
+
+/*
+1. 使用ajax框架: axios+promise
+2. axios: https://github.com/mzabriskie/axios
+3. 测试url : https://api.github.com/search/repositories?q=javascript&sort=stars
+*/
+
+  class RepoList extends React.Component {
+
+    constructor(props) {
+      super(props);
+      this.state = {
+        loading: true,
+        error: null,
+        data: null
+      };
+    }
+
+    componentDidMount() {
+      this.props.promise.then((response) => {
+        console.log(response.data.items)
+        var data = response.data;
+        this.setState({
+          loading: false,
+          data: data
+        })
+      }).catch((error) => {
+        console.log(error.response.data);
+        this.setState({loading: false, error: error.response.data.message})
+      });
+    }
+
+    render() {
+      if (this.state.loading) {
+        return <span>loading...</span>;
+      } else if (this.state.error !== null) {
+        return <span>ERROR: {this.state.error}</span>;
+      } else {
+        console.log(this.state.data);
+        var repos = this.state.data.items;
+        var repoList = repos.map(function (repo, index) {
+          return <li key={index + 1}>
+            <a href={repo.html_url}>{repo.name}</a> ({repo.stargazers_count} stars) <br/> {repo.description}
+          </li>;
+        });
+        return (
+            <div>
+              <h1>Most Popular JavaScript Projects in Github</h1>
+              <ol>{repoList}</ol>
+            </div>
+        );
+      }
+    }
+  }
+
+  var promise = axios.get('https://api.github.com/search/repositories?q=javascript&sort=stars');
+  ReactDOM.render(<RepoList promise={promise}/>, document.getElementById('example'));
+</script>
+</body>
+</html>

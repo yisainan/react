@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>04_component</title>
+</head>
+<body>
+<div id="example"></div>
+<br>
+
+<script src="../js/react.js"></script>
+<script src="../js/react-dom.js"></script>
+<script src="../js/babel.min.js"></script>
+<script type="text/babel">
+  /*
+  验证:
+  虚拟DOM+DOM Diff算法: 最小化页面重绘
+  */
+
+  class HelloWorld extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        date: new Date()
+      };
+    }
+
+    componentDidMount () {
+      setInterval(() => {
+        this.setState({
+          date: new Date()
+        })
+      }, 1000)
+    }
+
+    render () {
+      console.log('render()')
+      return (
+          <p>
+            Hello, <input type="text" placeholder="Your name here"/>!
+            It is {this.state.date.toTimeString()}
+          </p>
+      );
+    }
+  }
+
+  ReactDOM.render(
+      <HelloWorld/>,
+      document.getElementById('example')
+  );
+</script>
+</body>
+</html>

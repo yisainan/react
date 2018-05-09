@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>11_ajax</title>
+</head>
+<body>
+<div id="example"></div>
+
+<script src="../js/react.js"></script>
+<script src="../js/react-dom.js"></script>
+<script src="../js/babel.min.js"></script>
+<script src="//cdn.bootcss.com/fetch/2.0.1/fetch.min.js"></script>
+<script type="text/babel">
+
+/*
+1. React没有ajax模块
+  * 集成其它的js库(如jQuery/fetch/axios), 发送ajax请求
+  * 利用函数对象的bind()改变函数内部的this指向
+2. 关于fetch:
+  * https://github.github.io/fetch/
+  * https://segmentfault.com/a/1190000003810652
+3. 测试url:
+  * https://api.github.com/users/octocat/gists
+*/
+
+  class UserGist extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        username: '',
+        lastGistUrl: '###'
+      };
+    }
+
+    componentDidMount() {
+      fetch(this.props.source).then(
+          (response) => {
+            response.json().then((result) => {
+              console.log(result);
+              var lastGist = result[0];
+              this.setState({
+                username: lastGist.owner.login,
+                lastGistUrl: lastGist.html_url
+              });
+            })
+          },
+          (error) => {
+            console.log(error);
+          }
+      );
+    }
+
+    render() {
+      return (
+          <div>
+            {this.state.username}'s last gist is <a href={this.state.lastGistUrl}>here</a>
+          </div>
+      );
+    }
+  }
+
+  var url = 'https://api.github.com/users/octocat/gists';
+  ReactDOM.render(<UserGist source={url}/>, document.getElementById('example'));
+</script>
+</body>
+</html>
+
+
+

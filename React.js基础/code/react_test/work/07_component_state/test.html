@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>07_component_state</title>
+</head>
+<body>
+
+<div id="example"></div>
+
+<script src="../js/react.js"></script>
+<script src="../js/react-dom.js"></script>
+<script src="../js/babel.min.js"></script>
+<script type="text/babel">
+  /*
+  组件3大属性之: state属性
+    1). 组件被称为"状态机", 通过更新组件的状态值来更新对应的页面显示(重新渲染)
+    2). 初始化状态:
+      constructor (props) {
+        super(props);
+        this.state = {
+          stateProp1 : value1,
+          stateProp2 : value2
+        };
+      }
+    3). 读取某个状态值
+      this.state.statePropertyName
+    4). 更新状态---->组件界面更新
+      this.setState({
+        stateProp1 : value1,
+        stateProp2 : value2
+      })
+    5). 问题: 请区别一下组件的props和state属性?
+  */
+
+  /*
+  需求: 自定义组件, 功能说明如下
+    1. 显示h2标题, 初始文本为: 你喜欢我
+    2. 点击标题更新为: 我喜欢你
+  */
+</script>
+</body>
+</html>
+

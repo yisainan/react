@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>10_ComponentLife</title>
+</head>
+<body>
+<div id="example"></div>
+
+<script src="../js/react.js"></script>
+<script src="../js/react-dom.js"></script>
+<script src="../js/babel.min.js"></script>
+<script type="text/babel">
+  /*
+   自定义组件:
+   功能描述: 让指定的文本做显示/隐藏的动画
+   */
+  class AnimateMsg extends React.Component {
+    constructor(props) {
+      super(props)
+      this.state = {
+        opacity: 1.0
+      }
+    }
+
+    componentDidMount() {
+      this.intervalId = setInterval(function () {
+        var opacity = this.state.opacity;
+        opacity -= 0.05;
+        if (opacity < 0.05) {
+          opacity = 1.0;
+        }
+        this.setState({
+          opacity: opacity
+        });
+      }.bind(this), 100);
+    }
+
+    componentWillUnmount() {
+      clearInterval(this.intervalId)
+    }
+
+    render () {
+      return (
+          <p style={{opacity: this.state.opacity}}>{this.props.msg}</p>
+      );
+    }
+  }
+  AnimateMsg.propTypes = {
+    msg: React.PropTypes.string.isRequired,
+  }
+
+  ReactDOM.render(<AnimateMsg msg="www.atguigu.com"/>, document.getElementById('example'));
+</script>
+</body>
+</html>

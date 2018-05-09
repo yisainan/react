@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Lists and Keys</title>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script src="../js/react.js"></script>
+<script src="../js/react-dom.js"></script>
+<script src="../js/babel.min.js"></script>
+
+<script type="text/babel">
+
+  /*
+   为什么列表的key尽量不要用index
+   http://jsbin.com/wohima/edit?js,output
+   http://taobaofed.org/blog/2016/08/24/react-key/?utm_source=tuicool&utm_medium=referral
+   简单来说: 当数组中的数据发生变化时: React 比较更新前后的元素 key 值，
+   如果相同则更新，如果不同则销毁之前的，重新创建一个元素
+   */
+
+  function ListItem({id, name, age}) {
+    return <li>{id}--{name}--{age}---<input type="text"/></li>;
+  }
+
+  class PersonList extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        persons: [
+          {id: 1, name: 'Tom', age: 12},
+          {id: 2, name: 'Jack', age: 13}
+        ]
+      };
+      this.update = this.update.bind(this);
+    }
+
+    update() {
+      let persons = this.state.persons;
+      persons.unshift({id: 3, name: 'Bob', age: 14})
+      this.setState({persons})
+    }
+
+    render() {
+      const persons = this.state.persons;
+      const listItems = persons.map((person, index) =>
+          <ListItem key={person.id} {...person}/>
+      );
+      const listItems2 = persons.map((person, index) =>
+          <ListItem key={index} {...person}/>
+      );
+      return (
+          <div>
+            <h2>使用id作为key</h2>
+            <ul>
+              {listItems}
+            </ul>
+
+            <h2>使用index作为key</h2>
+            <ul>
+              {listItems2}
+            </ul>
+            <button onClick={this.update}>首位添加一个人</button>
+          </div>
+      );
+    }
+  }
+
+  ReactDOM.render(
+      <PersonList/>,
+      document.getElementById('root')
+  );
+</script>
+</body>
+</html>

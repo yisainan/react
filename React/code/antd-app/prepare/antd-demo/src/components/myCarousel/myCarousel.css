@@ -1,0 +1,10 @@
+.carousel-wrap {
+  width: 350px;
+  height: 220px;
+  margin: 0 auto;
+}
+
+.carousel-wrap img {
+  width: 350px;
+  height: 220px;
+}

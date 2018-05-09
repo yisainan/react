@@ -1,0 +1,14 @@
+body {
+  background: blue;
+}
+
+#div1{
+  background-image: url(./img/logo.jpg);
+  height: 200px;
+  width: 200px;
+}
+#div2{
+  background-image: url(./img/big.jpg);
+  height: 200px;
+  width: 200px;
+}

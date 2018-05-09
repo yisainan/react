@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>03_component_basic</title>
+</head>
+<body>
+
+<div id="example1"></div>
+<div id="example2"></div>
+<div id="example3"></div>
+
+<script src="../js/react.js"></script>
+<script src="../js/react-dom.js"></script>
+<script src="../js/babel.min.js"></script>
+
+<script type="text/babel">
+  /*
+  1. 自定义组件(Component) :
+    1). React的核心语法和概念
+    2). 作用类似于angular中自定义标签指令
+    3). 组件的2个基本概念
+      * 组件类(工厂函数/构造函数/类): MyCompoent
+      * 组件标签: <MyCompoent/>
+    4). 定义组件类
+      //方式1: 工厂(无状态)函数(最简洁, 推荐使用)
+      function MyComponent1() {
+        return <h1>自定义组件标题11111</h1>;
+      }
+      //方式2: ES6类语法(复杂组件, 推荐使用)
+      class MyComponent3 extends React.Component {
+        render () {
+          return <h1>自定义组件标题33333</h1>;
+        }
+      }
+      //方式3: ES5老语法(不推荐使用了)
+      var MyComponent2 = React.createClass({
+        render () {
+          return <h1>自定义组件标题22222</h1>;
+        }
+      });
+    5). 渲染组件标签
+      ReactDOM.render(<MyComponent/>, document.getElementById('example'));
+  2. 注意:
+    1). 返回的组件类必须首字母大写
+    2). 虚拟DOM元素必须只有一个根元素
+    3). 虚拟DOM元素必须有结束标签
+  3. ReactDOM.render()渲染组件标签的基本流程
+    1). React内部会创建组件实例对象
+    2). 得到包含的虚拟DOM并解析为真实DOM
+    3). 插入到指定的页面元素内部
+  */
+</script>
+</body>
+</html>

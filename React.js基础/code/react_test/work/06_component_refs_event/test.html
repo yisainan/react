@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>07_component_refs</title>
+</head>
+<body>
+  <input type="text">
+  <button>提示输入数据</button>
+  <input type="text" placeholder="失去焦点提示数据">
+  <hr>
+
+  <div id="example"></div>
+
+  <script src="../js/react.js"></script>
+  <script src="../js/react-dom.js"></script>
+  <script src="../js/babel.min.js"></script>
+  <script type="text/babel">
+    /*
+    1. 组件的3大属性之二: refs属性
+      1). 组件内的标签都可以定义ref属性来标识自己
+      2). 在组件中可以通过this.refs.refName来得到对应的真实DOM对象
+      3). 作用: 用于操作指定的ref属性的dom元素对象(表单标签居多)
+        * <input ref='username'>
+        * this.refs.username //返回input对象
+    2. 事件处理
+      1). 通过onXxx属性指定组件的事件处理函数(注意大小写)
+        * React使用的是自定义(合成)事件, 而不是使用的DOM事件
+        * React中的事件是通过委托方式处理的(委托给组件最外层的元素)
+      2). 通过event.target得到发生事件的DOM元素对象
+        <input onFocus={this.handleClick}/>
+        handleFocus(event) {
+          event.target  //返回input对象
+        }
+    3. 强烈注意
+      1). 组件内置的方法中的this为组件对象
+      2). 在组件中自定义的方法中的this为null
+        * 强制绑定this
+        * 箭头函数(ES6模块化编码时才能使用)
+    4. 问题: 如何给一个函数强制指定内部的this?
+    */
+
+    /*
+    需求: 自定义组件, 功能说明如下:
+      1. 界面如果页面所示
+      2. 点击按钮, 提示第一个输入框中的值
+      3. 当第2个输入框失去焦点时, 提示这个输入框中的值
+    */
+  </script>
+</body>
+</html>
