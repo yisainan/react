@@ -41,7 +41,7 @@
       2). 如果输入的文本两边有空格, 去掉空格后添加
     */
 
-    class TodoList extends React.Component {
+/*    class TodoList extends React.Component {
 
       render () {
         return (
@@ -98,6 +98,68 @@
       }
     }
 
+    ReactDOM.render(<App/>, document.getElementById('example'))*/
+
+//    lianxi 1 问题很大 没逻辑性
+    class TodoList extends  React.Component{
+        render() {
+            return (
+                <ul>
+                    {
+                        this.props.todos.map((todo, index) => {
+                            return <li key={index}>{todo}</li>
+                        })
+                    }
+                </ul>
+            )
+        }
+    }
+
+    class App extends React.Component{
+        constructor(props) {
+            super(props);
+            this.state = {
+                todos: ['吃饭', '睡觉', '打豆豆'],
+                inputTodo: ''
+            }
+//            强制绑定this
+            this.changeInput = this.changeInput.bind(this);
+            this.addTodo = this.addTodo.bind(this);
+        }
+
+        changeInput(event){
+            this.setState({
+                inputTodo: event.target.value
+            })
+        }
+
+        addTodo(){
+            let inputTodo = this.state.inputTodo.trim();
+            if(!inputTodo) {
+                this.setState({ inputTodo: '' });
+                return;
+            }
+
+            let todos = this.state.todos;
+            todos.unshift(inputTodo);
+            inputTodo = '';
+            //渲染
+            this.setState({ todos, inputTodo });
+        }
+
+        render(){
+            return (
+                <div>
+                    <h2>Simple TODO List</h2>
+                    <input type="text" onChange={this.changeInput} value={this.state.inputTodo}/>
+                    <button onClick={this.addTodo}>Add #{this.state.todos.length+1}</button>
+//                    子组件
+                    <TodoList todos={this.state.todos}/>
+                </div>
+            )
+        }
+    }
+    //挂载   <App/> 这里是个虚拟DOM对象
     ReactDOM.render(<App/>, document.getElementById('example'))
   </script>
 </body>
