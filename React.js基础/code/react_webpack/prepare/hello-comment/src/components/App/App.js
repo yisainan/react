@@ -35,7 +35,7 @@ class App extends React.Component {
     ];
     this.setState({ comments });
   }
-
+  // 注意 add箭头函数的写法 == delete 强制绑定this的写法
   add = (comment) => {
     let comments = this.state.comments;
     comments.unshift(comment);
