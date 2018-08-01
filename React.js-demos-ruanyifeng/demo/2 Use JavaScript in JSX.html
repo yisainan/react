@@ -10,19 +10,26 @@
     <script type="text/babel">
       var names = ['Alice', 'Emily', 'Kate'];
 
-      ReactDOM.render(
-        <div>
-        {
-          names.map(function (name, index) {
-            return <div key={index}>Hello, {name}!</div>
-          })
-        }
-        </div>,
-        document.getElementById('example')
-      );
+      // ReactDOM.render(
+      //   <div>
+      //   {
+      //     names.map(function (name, index) {
+      //       return <div key={index}>Hello, {name}!</div>
+      //     })
+      //   }
+      //   </div>,
+      //   document.getElementById('example')
+      // );
 
-      //1
-      ReactDom.render()
+      //1  ReactDOM: dom-->大写DOM
+      ReactDOM.render(
+        <div>{
+          names.map(function (name, index) {
+            return <div key={index}>Hello{name}</div>
+          })
+        }</div>,
+        document.getElementById('example')
+      )
     </script>
   </body>
 </html>
