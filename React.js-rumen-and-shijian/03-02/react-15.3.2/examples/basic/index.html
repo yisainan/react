@@ -38,7 +38,7 @@
     });
 
     // Call React.createFactory instead of directly call ExampleApplication({...}) in React.render
-    var ExampleApplicationFactory = React.createFactory(ExampleApplication);
+    var <ExampleAppli></ExampleAppli>cationFactory = React.createFactory(ExampleApplication);
 
     var start = new Date().getTime();
 
@@ -52,7 +52,8 @@
 
 <!-- 练习一 ela假设为1000/100=10
 
-疑问：return React.DOM.p(null,mes);
+疑问：return React.DOM.p(null,mes);   有难度
+答：应当是创建一个p标签
 -->
 <script>
     var ExampleApp = React.createClass({
