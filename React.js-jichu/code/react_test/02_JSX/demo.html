@@ -35,8 +35,8 @@
   ReactDOM.render(
     <ul>
       {
-        names.map(function (item) {
-          return <li>{item}</li>;
+        names.map(function (item, index) {
+          return <li>{item}<p>{index}</p></li>;
         })
       }
     </ul>,
