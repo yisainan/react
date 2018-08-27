@@ -6,10 +6,16 @@ The code samples for *Learning React* by Alex Banks and Eve Porcello, published 
 * Chapter 1
    *  安装node及npm 等环境
 * Chapter 2
-   * 01-declaring-variables
+   * 01-声明变量
      * const的使用
      * let的使用
      * 模板字符串
+   * 02-es6
+   * 03-箭头函数
+   * 04-对象和数组
+   * 05-promiss
+   * 06-类
+
 * Chapter 3
    *  123
 * Chapter 4
