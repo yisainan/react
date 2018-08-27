@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --hot --inline --colors --content-base ./build",
     "build": "webpack --progress --colors"
   },
@@ -23,7 +22,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
-    "webpack": "^4.17.1",
-    "webpack-dev-server": "^3.1.6"
+    "webpack": "^2.3.3",
+    "webpack-dev-server": "^2.4.2"
   }
 }
