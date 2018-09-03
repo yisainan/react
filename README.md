@@ -33,8 +33,7 @@ https://react.docschina.org
 * React.js-dianping
 * React.js-jichu
 * React.js-rumen-and-shijian
-* React.js-xinwentoutiao
-  见网盘
+* React.js-xinwentoutiao    见网盘
 
 
 
