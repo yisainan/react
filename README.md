@@ -37,11 +37,3 @@ https://react.docschina.org
 
 
 
-
-
-```
-## Deleted
-```
-
-
-```
