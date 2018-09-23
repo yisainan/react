@@ -1,0 +1,38 @@
+$fontGrayColor: #666;
+$lineGrayColor: #ccc;
+$bgGrayColor: #eee;
+$fontSize: 16px;
+
+body {
+	font-size: $fontSize;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	ul {
+		text-align: right;
+		background-color: $bgGrayColor;
+		margin: 0;
+	}
+	ul li {
+		display: inline-block;
+		list-style: none;
+		text-align: center;
+		border-left: 1px solid $lineGrayColor;
+	}
+	a {
+	    text-decoration: none;
+	    color: $fontGrayColor;
+	    font-size: 1.5rem;
+	    padding: 0.8em 2em;
+	    display: block;
+	}
+	a:hover {
+		color: #000;
+	}
+	a.active {
+		background-color: $fontGrayColor;
+		color: #fff;
+	}
+}

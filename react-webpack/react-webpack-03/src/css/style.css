@@ -1,0 +1,32 @@
+//这种写法适用于适用precss插件的情况，如果你使用less，less识别不了这种语法会报错的。
+
+
+
+
+/*$mainColor: #8ce7b4;
+$fontSize: 1rem;
+
+@keyframes rotate {
+	0%		{transform: rotate(0deg);left:0px;}
+	100%	{transform: rotate(360deg);left:0px;}
+
+}
+.container {
+	text-align: center;
+	margin-top: 40px;
+}
+
+.flexContainer {
+	display: flex;
+	flex-direction: 'row';
+	height: 100px;
+	align-items: center;
+	justify-content: space-around;
+}
+button {
+	background: $mainColor;
+	font-size: calc(1.5 * $fontSize);
+}
+.container .logo {
+	animation: rotate 10s linear 0s infinite;
+}*/

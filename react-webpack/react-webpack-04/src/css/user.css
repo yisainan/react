@@ -1,0 +1,11 @@
+$mainColor: #8ce7b4;
+$fontSize: 1rem;
+
+.user {
+	text-align: center;
+	margin-top: 40px;
+	.title {
+		background: $mainColor;
+	}
+}
+

@@ -1,0 +1,18 @@
+@color: #237889;
+@fontSize: 1rem;
+
+@keyframes rotate {
+	0%		{transform: rotate(0deg);left:0px;}
+	100%	{transform: rotate(360deg);left:0px;}
+
+}
+
+.container {
+	.logo {
+		animation: rotate 10s linear 0s infinite;
+	}
+	button {
+		background: @color;
+		font-size: calc(1.5 * @fontSize);
+	}
+}
