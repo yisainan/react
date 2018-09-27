@@ -7,7 +7,7 @@ module.exports = {
   devtool: debug ? "inline-sourcemap" : null,
   entry: "./src/js/index.js",
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js?$/,
         exclude: /(node_modules)/,
@@ -19,8 +19,10 @@ module.exports = {
     ]
   },
   output: {
-    path: __dirname,
-    filename: "./src/bundle.js"
+    path:path.join(__dirname,'/src/js'),
+    filename:'[name].js'
+    // path: __dirname,
+    // filename: "./src/bundle.js"
   },
   plugins: debug ? [] : [
     new webpack.optimize.DedupePlugin(),

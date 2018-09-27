@@ -4,6 +4,10 @@ var path = require('path');
 
 module.exports = {
   context: path.join(__dirname),
+  devServer: {
+    inline: false,
+    contentBase: "./dist",
+  },
   devtool: debug ? "inline-sourcemap" : null,
   entry: "./src/js/index.js",
   module: {
@@ -19,8 +23,8 @@ module.exports = {
     ]
   },
   output: {
-    path: __dirname,
-    filename: "./src/bundle.js"
+    path:path.join(__dirname,'/src/js'),
+    filename:'[name].js'
   },
   plugins: debug ? [] : [
     new webpack.optimize.DedupePlugin(),
