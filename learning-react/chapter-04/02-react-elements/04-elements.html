@@ -15,30 +15,46 @@
 
 <script>
 
-    const items = [
-        "1 lb Salmon",
-        "1 cup Pine Nuts",
-        "2 cups Butter Lettuce",
-        "1 Yellow Squash",
-        "1/2 cup Olive Oil",
-        "3 cloves of Garlic"
-    ]
+    // const items = [
+    //     "1 lb Salmon",
+    //     "1 cup Pine Nuts",
+    //     "2 cups Butter Lettuce",
+    //     "1 Yellow Squash",
+    //     "1/2 cup Olive Oil",
+    //     "3 cloves of Garlic"
+    // ]
 
-    const ingredients = React.createElement(
+    // const ingredients = React.createElement(
+    //     "ul",
+    //     { className: "ingredients" },
+    //     items.map((ingredient, i) =>
+    //         React.createElement("li", null, ingredient)
+    //     )
+    // )
+
+    // ReactDOM.render(
+    //   ingredients,
+    //   document.getElementById('react-container')
+    // )
+
+    // console.log('ingredients', ingredients)
+
+
+// 1  总结：items.map中使用的箭头函数  (()=>...)  注意没有{}
+    const items = [1,2,3,4,5]
+
+    const qileiDeComponent = React.createElement(
         "ul",
-        { className: "ingredients" },
-        items.map((ingredient, i) =>
-            React.createElement("li", null, ingredient)
+        {className:"qilei"},
+        items.map((item, i)=>
+            React.createElement("li",null,item)
         )
     )
-
     ReactDOM.render(
-      ingredients,
-      document.getElementById('react-container')
+        qileiDeComponent,
+        document.getElementById('react-container')
     )
-
-    console.log('ingredients', ingredients)
-
+    console.log('qileiDeComponent', qileiDeComponent)
 </script>
 
 </body>

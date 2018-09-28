@@ -15,26 +15,43 @@
 
 <script>
 
-    class IngredientsList extends React.Component {
-      render() {
-        return React.createElement("ul", {"className": "ingredients"},
-            React.createElement("li", null, "1 lb Salmon"),
-            React.createElement("li", null, "1 cup Pine Nuts"),
-            React.createElement("li", null, "2 cups Butter Lettuce"),
-            React.createElement("li", null, "1 Yellow Squash"),
-            React.createElement("li", null, "1/2 cup Olive Oil"),
-            React.createElement("li", null, "3 cloves of Garlic")
-        )
-      }
+    // class IngredientsList extends React.Component {
+    //   render() {
+    //     return React.createElement("ul", {"className": "ingredients"},
+    //         React.createElement("li", null, "1 lb Salmon"),
+    //         React.createElement("li", null, "1 cup Pine Nuts"),
+    //         React.createElement("li", null, "2 cups Butter Lettuce"),
+    //         React.createElement("li", null, "1 Yellow Squash"),
+    //         React.createElement("li", null, "1/2 cup Olive Oil"),
+    //         React.createElement("li", null, "3 cloves of Garlic")
+    //     )
+    //   }
+    // }
+
+    // const list = React.createElement(IngredientsList, null, null)
+
+    // ReactDOM.render(
+    //     list,
+    //     document.getElementById('react-container')
+    // )
+
+
+// 1
+    class myComponent extends React.Component {
+        render() {
+            return React.createElement("ol",{className:'qilei'},
+            React.createElement("li",null,"1111"),
+            React.createElement("li",null,"2222"),
+            React.createElement("li",null,"333"),
+            React.createElement("li",null,"44")
+            )
+        }
     }
-
-    const list = React.createElement(IngredientsList, null, null)
-
+    const myComponent1 = React.createElement(myComponent,null,null)
     ReactDOM.render(
-        list,
+        myComponent1,
         document.getElementById('react-container')
     )
-
 </script>
 
 </body>
