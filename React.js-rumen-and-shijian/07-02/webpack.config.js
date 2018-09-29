@@ -19,6 +19,8 @@ module.exports = {
     ]
   },
   output: {
+    // path:path.join(__dirname, '/src/js'),
+    // filename:'[name].js'
     path: __dirname,
     filename: "./src/bundle.js"
   },
