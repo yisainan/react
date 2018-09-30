@@ -1,0 +1,31 @@
+{
+  "name": "react-redux-ducks",
+  "version": "1.0.0",
+  "description": "react redux ducks app",
+  "scripts": {
+    "start": "webpack-dev-server --hot --inline --colors --content-base ./build",
+    "build": "webpack --progress --colors"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-transform-runtime": "^6.3.13",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "webpack": "^2.3.3",
+    "webpack-dev-server": "^2.4.2"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.3.14",
+    "babel-runtime": "^6.23.0",
+    "react": "^15.5.3",
+    "react-dom": "^15.5.3",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "react-redux": "^4.4.0",
+    "redux": "^3.3.1",
+    "redux-logger": "^2.5.2"
+  }
+}

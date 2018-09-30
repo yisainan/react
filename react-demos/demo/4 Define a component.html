@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      // var HelloMessage = React.createClass({
+      //   render: function() {
+      //     return <h1>Hello {this.props.name}</h1>;
+      //   }
+      // });
+      //
+      // ReactDOM.render(
+      //   <HelloMessage name="John" />,
+      //   document.getElementById('example')
+      // );
+      // 1.  props 的使用
+      var HelloWorld = React.createClass({
+        render: function() {
+          return <h2>hello {this.props.name}</h2>
+        }
+      })
+      ReactDOM.render(
+        <HelloWorld name="world"></HelloWorld>,
+        document.getElementById("example")
+      )
+    </script>
+  </body>
+</html>

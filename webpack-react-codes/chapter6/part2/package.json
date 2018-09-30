@@ -1,0 +1,68 @@
+{
+  "name": "deskmark",
+  "version": "1.0.0",
+  "description": "an web markdown writer an docs manager based on indexeddb and build on React.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack-dev-server --hot --host 0.0.0.0",
+    "test": "karma start"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [
+    "javascript",
+    "react",
+    "markdown",
+    "indexeddb",
+    "webpack",
+    "karma"
+  ],
+  "author": "vikingmute, island205",
+  "license": "MIT",
+  "homepage": "https://github.com/island205/deskmark#readme",
+  "engines": {
+    "node": ">=0.12.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.3.15",
+    "babel-eslint": "^6.0.2",
+    "babel-loader": "^6.2.0",
+    "babel-plugin-transform-object-rest-spread": "^6.5.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "bootstrap": "^4.0.0-alpha.2",
+    "css-loader": "^0.23.1",
+    "eslint": "^2.7.0",
+    "eslint-config-airbnb": "^6.2.0",
+    "eslint-loader": "^1.3.0",
+    "eslint-plugin-react": "^4.3.0",
+    "expect": "^1.13.4",
+    "html-webpack-plugin": "^2.21.0",
+    "karma": "^0.13.18",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-cli": "^0.1.2",
+    "karma-mocha": "^0.2.1",
+    "karma-webpack": "^1.7.0",
+    "mocha": "^2.3.4",
+    "node-sass": "^3.4.2",
+    "react-addons-test-utils": "^0.14.6",
+    "react-hot-loader": "^1.3.0",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
+    "uuid": "^2.0.1",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
+    "marked": "^0.3.5",
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1",
+    "react-redux": "^4.4.2",
+    "redux": "^3.2.1",
+    "redux-promise-middleware": "^3.0.0",
+    "redux-thunk": "^1.0.3"
+  }
+}

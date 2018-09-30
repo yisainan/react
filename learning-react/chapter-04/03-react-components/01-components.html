@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>React Components</title>
+</head>
+<body>
+
+<!-- Target Container -->
+<div id="react-container"></div>
+
+<!-- React Library & React DOM-->
+<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+<script>
+
+    // class IngredientsList extends React.Component {
+    //   render() {
+    //     return React.createElement("ul", {"className": "ingredients"},
+    //         React.createElement("li", null, "1 lb Salmon"),
+    //         React.createElement("li", null, "1 cup Pine Nuts"),
+    //         React.createElement("li", null, "2 cups Butter Lettuce"),
+    //         React.createElement("li", null, "1 Yellow Squash"),
+    //         React.createElement("li", null, "1/2 cup Olive Oil"),
+    //         React.createElement("li", null, "3 cloves of Garlic")
+    //     )
+    //   }
+    // }
+
+    // const list = React.createElement(IngredientsList, null, null)
+
+    // ReactDOM.render(
+    //     list,
+    //     document.getElementById('react-container')
+    // )
+
+
+// 1
+    class myComponent extends React.Component {
+        render() {
+            return React.createElement("ol",{className:'qilei'},
+            React.createElement("li",null,"1111"),
+            React.createElement("li",null,"2222"),
+            React.createElement("li",null,"333"),
+            React.createElement("li",null,"44")
+            )
+        }
+    }
+    const myComponent1 = React.createElement(myComponent,null,null)
+    ReactDOM.render(
+        myComponent1,
+        document.getElementById('react-container')
+    )
+</script>
+
+</body>
+</html>
