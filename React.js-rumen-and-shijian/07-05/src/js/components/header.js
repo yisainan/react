@@ -13,7 +13,7 @@ import React from 'react';
 export default class ComponentHeader extends React.Component{
   render(){
     return(
-      <header><p>头部123</p></header>
+      <header><p>头部12222222123123</p></header>
     )
   }
 }

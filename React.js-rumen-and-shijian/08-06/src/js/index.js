@@ -35,3 +35,8 @@ class Index extends React.Component {
 }
 ReactDOM.render(
 	<Index/>, document.getElementById('example'));
+
+
+// 思路：根组件 1.引入必要的依赖React ReactDOM
+// 2.引入子组件
+// 3.构建组件 语法是特定的
