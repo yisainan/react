@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "antd": "^2.1.0",
+    "babel-loader": "^6.4.1",
     "babel-plugin-react-html-attrs": "^2.0.0",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
