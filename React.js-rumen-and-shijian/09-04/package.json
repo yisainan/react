@@ -17,7 +17,7 @@
     "react-mixin": "^2.0.2",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.1",
-
+    "babel-loader": "^6.4.1",
     "babel-plugin-react-html-attrs": "^2.0.0",
     "style-loader": "^0.13.1",
     "css-loader": "^0.25.0"

@@ -57,3 +57,6 @@ BodyIndex.propTypes = {
 BodyIndex.defaultProps = defaultProps;
 
 ReactMixin(BodyIndex.prototype, MixinLog);
+
+
+// 思路：1.constructor的使用 2.state setState  3.refs  4.事件绑定
