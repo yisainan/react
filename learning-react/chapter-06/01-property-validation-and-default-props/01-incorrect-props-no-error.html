@@ -14,11 +14,10 @@
 
 <script type="text/babel">
 
-    const { Component } = React
+    /*const { Component } = React
     const { render } = ReactDOM
 
     class Summary extends Component {
-
         render() {
             const {ingredients, steps, title} = this.props
             return (
@@ -39,9 +38,26 @@
                ingredients="peanut butter, jelly, bread"
                steps="spread peanut butter and jelly between bread" />,
       document.getElementById('react-container')
+    )*/
+
+// 1===>  犯了巨二的错误 <p></p>
+    const { Component } = React
+    const { render } = ReactDOM
+    class Zujian extends Component {
+      render() {
+        const {title, des} = this.props
+        return (
+          <div className="zujian">
+            <h1>{title}</h1>
+            <p>{des}</p>
+          </div>
+        )
+      }
+    }
+    render(
+      <Zujian title="标题" des="描述" />,
+      document.getElementById('react-container')
     )
-
 </script>
-
 </body>
 </html>
