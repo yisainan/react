@@ -16,27 +16,65 @@
 
 <script>
 
-    var items = [
-      "1 lb salmon",
-      "1 cup Pine Nuts",
-      "2 cups Butter Lettuce",
-      "1 Yellow Squash",
-      "1/2 cup Olive Oil",
-      "3 cloves of Garlic"
-    ]
+    // var items = [
+    //   "1 lb salmon",
+    //   "1 cup Pine Nuts",
+    //   "2 cups Butter Lettuce",
+    //   "1 Yellow Squash",
+    //   "1/2 cup Olive Oil",
+    //   "3 cloves of Garlic"
+    // ]
 
-    var list = ReactDOMFactories.ul(
-        { className: "ingredients" },
-        items.map((ingredient, key) =>
-            ReactDOMFactories.li({key}, ingredient)
+    // var list = ReactDOMFactories.ul(
+    //     { className: "ingredients" },
+    //     items.map((ingredient, key) =>
+    //         ReactDOMFactories.li({key}, ingredient)
+    //     )
+    // )
+
+    // ReactDOM.render(
+    //     list,
+    //     document.getElementById('react-container')
+    // )
+
+// 1  出错 ()=>  后面别写{}了
+    var arr = [1,2,3,4,5,6]
+    var ulList =ReactDOMFactories.ul(
+        {className:"qilei"},
+        arr.map((i,key)=>
+            ReactDOMFactories.li({key},i)
         )
     )
-
     ReactDOM.render(
-        list,
+        ulList,
         document.getElementById('react-container')
     )
 
+
+
+/* ===>    
+<div id="react-container">
+	<ul class="qilei">
+		<li>
+			1
+		</li>
+		<li>
+			2
+		</li>
+		<li>
+			3
+		</li>
+		<li>
+			4
+		</li>
+		<li>
+			5
+		</li>
+		<li>
+			6
+		</li>
+	</ul>
+</div>*/
 </script>
 
 </body>
