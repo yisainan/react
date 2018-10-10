@@ -11,7 +11,7 @@ export default class BodyIndex extends React.Component{
   }
 
   render(){
-    var userName = '';
+    var userName = 'qilei';
     var boolInput = false;
 
     var html = "IMOOC&nbsp;LESSON";
@@ -19,12 +19,22 @@ export default class BodyIndex extends React.Component{
     //comments
 
     return (
+      // <div>
+      //   <h2>页面的主体内容</h2>
+      //   <p>{userName=='' ? '用户还没有登录' : '用户名：' + userName}</p>
+      //   <p><input type='button' value = {userName} disabled={boolInput}/></p>
+      //   {/*注释*/}
+      //   <p>{html}</p> {/*需要进行 Unicode 的转码*/}
+      //   <p dangerouslySetInnerHTML ={{__html : html}}></p>
+      // </div>
+
+      // 1
       <div>
         <h2>页面的主体内容</h2>
-        <p>{userName=='' ? '用户还没有登录' : '用户名：' + userName}</p>
-        <p><input type='button' value = {userName} disabled={boolInput}/></p>
-        {/*注释*/}
-        <p>{html}</p> {/*需要进行 Unicode 的转码*/}
+        <p>姓名：{userName}</p>
+        <p><input type='button' value = { userName } disabled={ !boolInput }/></p>
+        <p>{/*注释*/}</p>
+        <p><p>{html}</p> {/*需要进行 Unicode 的转码*/}</p>
         <p dangerouslySetInnerHTML ={{__html : html}}></p>
       </div>
     )
