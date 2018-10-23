@@ -1,0 +1,94 @@
+<html>
+<head>
+    <meta charset="utf8">
+    <title>React问答 app - by 1ke.co & zexeo.com</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <style>
+      .container{
+        max-width: 800px;
+      }
+      .jumbotron .container{
+        position: relative;
+        max-width: 800px;
+      }
+      #add-question-btn{
+        position: absolute;
+        bottom: -20px;
+        right: 20px;
+      }
+      form[name="addQuestion"] .btn{
+        margin: 20px 0 0 15px;
+      }
+      .media-left{
+        text-align: center;
+        width:70px;
+        float: left;
+      }
+      .media-left .btn{
+        margin-bottom: 10px;
+      }
+      .vote-count{
+        display: block;
+      }
+    </style>
+</head>
+<body>
+    <div id="app">
+      <div class="jumbotron text-center">
+          <div class="container">
+            <h1>React问答</h1>
+            <button id="add-question-btn" class="btn btn-success">添加问题</button>
+          </div>
+      </div>
+      <div class="main container">
+        <form name="addQuestion" class="clearfix">
+          <div class="form-group">
+            <label for="qtitle">问题</label>
+            <input type="text" class="form-control" id="qtitle" placeholder="您的问题的标题">
+          </div>
+          <textarea class="form-control" rows="3" placeholder="问题的描述"></textarea>
+          <button class="btn btn-success pull-right">确认</button>
+          <button class="btn btn-default pull-right">取消</button>
+        </form>
+        <div id="questions" class="">
+          <div class="media">
+            <div class="media-left">
+              <button class="btn btn-default">
+                <span class="glyphicon glyphicon-chevron-up"></span>
+                <span class="vote-count">22</span>
+              </button>
+              <button class="btn btn-default">
+                <span class="glyphicon glyphicon-chevron-down"></span>
+              </button>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">产品经理与程序员矛盾的本质是什么？</h4>
+              <p>理性探讨，请勿撕逼。产品经理的主要工作职责是产品设计。接受来自其他部门的需求，经过设计后交付研发。但这里有好些职责不清楚的地方。</p>
+            </div>
+          </div>
+
+          <div class="media">
+            <div class="media-left">
+              <button class="btn btn-default">
+                <span class="glyphicon glyphicon-chevron-up"></span>
+                <span class="vote-count">12</span>
+              </button>
+              <button class="btn btn-default">
+                <span class="glyphicon glyphicon-chevron-down"></span>
+              </button>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">热爱编程是一种怎样的体验？</h4>
+              <p>别人对玩游戏感兴趣，我对写代码、看技术文章感兴趣；把泡github、stackoverflow、v2ex、reddit、csdn当做是兴趣爱好；遇到重复的工作，总想着能不能通过程序实现自动化；喝酒的时候把写代码当下酒菜，边喝边想边敲；不给工资我也会来加班；做梦都在写代码。</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 
+    <script src="/dist/js/main.js"></script>  -->
+</body>
+</html>

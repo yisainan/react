@@ -1,0 +1,83 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>学习React！！</title>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script src="bower_components/react/react.js"></script>
+    <script src="bower_components/react/JSXTransformer.js"></script>
+	<script type="text/jsx">
+		var stateRecordMixin = {
+			componentWillMount:function(){
+				this.oldStates = [];
+			},
+			componentWillUpdate: function(nextProp,nextState){
+				this.oldStates.push(nextState);
+			},
+			previousState:function(){
+				var index = this.oldStates.length -1;
+				return index == -1 ? {} : this.oldStates[index];
+			}
+		}
+
+		var MessageBox = React.createClass({
+			mixins: [stateRecordMixin],
+			getInitialState:function(){
+				return {
+					count: 0,
+				}
+			},
+			doUpdate:function(){
+				this.setState({
+					count: this.state.count + 1,
+				});
+
+				alert('上一次的计数是：'+this.previousState().count)
+			},
+			render:function(){	
+				console.log('渲染')
+				return ( 
+					<div>
+						<h1 > 计数： {this.state.count}</h1> 
+						<button onClick={this.doUpdate}>手动更新一下组件（包括子组件）</button>
+						<Submessage count={this.state.count}/>
+					</div>
+				)
+			}
+		});
+
+		var Submessage = React.createClass({
+			mixins: [stateRecordMixin],
+			getInitialState:function(){
+				return {
+					count: 0,
+				}
+			},
+			componentWillReceiveProps:function(nextProp){
+				this.setState({
+					count: this.props.count *2,
+				})
+			},
+			render:function(){
+				console.log('上一次子组件的计数是：'+this.previousState().count )
+				return (
+					<h3>当前子组件的计数是：{this.state.count}</h3>
+				)
+			}
+		});
+
+
+		var messageBox = React.render( <MessageBox/>, 
+			document.getElementById('app')
+		)
+
+
+	</script>
+
+
+</body>
+
+</html>

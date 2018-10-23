@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>学习React！！</title>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script src="bower_components/react/react-with-addons.js"></script>
+    <script src="bower_components/react/JSXTransformer.js"></script>
+	<script type="text/jsx">
+		var EasyForm = React.createClass({
+			mixins: [ React.addons.LinkedStateMixin ],
+			getInitialState:function(){
+				return {
+					message: 'react is awesome!',
+					isReactAwesome: true,
+				}
+			},
+			render:function(){
+				return (
+					<div>
+						<h1>我想说： {this.state.message}</h1>
+						<h2>React是不是很好用？ {this.state.isReactAwesome?'非常好用！':'一般般。。。'}</h2>
+						<input type="text" valueLink={this.linkState('message')} />
+						<br/>
+						<input type="checkbox" checkedLink={this.linkState('isReactAwesome') } />
+						<br/>
+						<SubComp messageLink={ this.linkState('message') } likeLink={this.linkState('isReactAwesome')} />
+
+					</div>
+				)
+			}
+		});
+
+		var SubComp = React.createClass({
+			render:function(){
+				return (
+					<div>
+						<h3>这是个子组件哦</h3>
+						<SubSubComp {...this.props } />
+					</div>
+				)
+			}
+		});
+
+		var SubSubComp = React.createClass({
+			render:function(){
+				return (
+					<div>
+						<p>你想说什么？</p>
+						<input type="text" valueLink={ this.props.messageLink } />
+						<p>你稀罕React么？</p>
+						<input type="checkbox" checkedLink = {this.props.likeLink } />
+					</div>
+				)
+			}
+		})
+
+
+		React.render( <EasyForm />, document.getElementById('app') );
+
+
+	</script>
+
+
+</body>
+
+</html>
