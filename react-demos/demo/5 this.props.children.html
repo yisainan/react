@@ -11,10 +11,17 @@
       var NotesList = React.createClass({
         render: function() {
           return (
+            // <ol>
+            //   {
+            //     React.Children.map(this.props.children, function (child) {
+            //       return <li>{child}</li>;
+            //     })
+            //   }
+            // </ol>
             <ol>
               {
-                React.Children.map(this.props.children, function (child) {
-                  return <li>{child}</li>;
+                React.Children.map(this.props.children, function(child){
+                  return <li>{child}</li>
                 })
               }
             </ol>
@@ -29,6 +36,26 @@
         </NotesList>,
         document.getElementById('example')
       );
+
+      // 1.React.Children.map   2.this.props.children children首字母小写
+
+
+      // 控制台的代码结构：  形参child 即为 一个个<span>hello</span>
+      // <div id="example">
+      //   <ol data-reactroot="">
+      //     <li>
+      //       <span>
+      //         hello
+      //       </span>
+      //     </li>
+      //     <li>
+      //       <span>
+      //         world
+      //       </span>
+      //     </li>
+      //   </ol>
+      // </div>
+
     </script>
   </body>
 </html>
