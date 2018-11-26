@@ -38,10 +38,14 @@
     }
 
     render(
-        <Summary title="PB & J"  />,
+        // title is over 20 characters 
+        // <Summary title="012345678901234567890"  steps={1} />,
+
+        // Invalid prop `steps` of type `string` supplied to `Summary`, expected `number`
+        // <Summary title="01234567890123456789"  steps="我是字符串" />,
+
         document.getElementById('react-container')
     )
-
 </script>
 
 </body>

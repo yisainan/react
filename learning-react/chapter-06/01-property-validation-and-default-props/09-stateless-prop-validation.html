@@ -40,14 +40,16 @@
     Summary.defaultProps = {
         ingredients: 0,
         steps: 0,
-        title: '[Untitled Recipe]'
+        title: '[Untitled Recipe]' // 翻译：无标题的食谱
     }
 
     render(
-        <Summary title="really delicous eggs and biscuits" />,
+        // <Summary title="really delicous eggs and biscuits" />,
+        <Summary />,
         document.getElementById('react-container')
     )
 
+// title is over 20 characters
 </script>
 
 </body>
