@@ -1,7 +1,7 @@
-Chapter 3 : Functional Programming with JavaScript
+Chapter 3 : Functional Programming with JavaScript[JavaScript函数式编程]
 ==================
-React, Flux, and Redux all fit within the functional JavaScript paradigm. Understanding the basic concepts of
-functional programming will make you better at structuring React applications.
+React、Flux和Redux都符合函数式JavaScript范式。的基本概念
+函数式编程将使您更好地构造React应用程序。
 
 Samples
 --------
