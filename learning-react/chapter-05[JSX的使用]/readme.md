@@ -1,14 +1,11 @@
 Chapter 5 : React with JSX
 ==================
-The alternative to typing out verbose React.createElement calls is JSX, a JavaScript extension that allows
-us to define React elements using syntax that looks similar to HTML.
+另一种方法是键入冗长的React。createElement调用JSX，这是一个允许的JavaScript扩展
+使用类似于HTML的语法定义React元素。
 
 Samples
 --------
 
-#### Babel Setup
-
-* Transpile JSX with Babel ([code](https://github.com/MoonHighway/learning-react/blob/master/chapter-05/page-setup.html))
 
 #### Recipes App with JSX
 
