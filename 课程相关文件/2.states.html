@@ -10,43 +10,67 @@
     <script src="bower_components/react/react.js"></script>
     <script src="bower_components/react/JSXTransformer.js"></script>
 	<script type="text/jsx">
+		// var MessageBox = React.createClass({
+		// 	getInitialState:function(){
+		// 		return {
+		// 			isVisible: true,
+		// 			titleMessage: '你好世界（来自state哦）',
+		// 		}
+		// 	},
+		// 	render:function(){	
+		// 		var styleObj={
+		// 			display: this.state.isVisible ? 'block' : 'none',
+		// 		}
+
+		// 		return ( 
+		// 			<div>
+		// 				<h1 style={styleObj}>{this.state.titleMessage}</h1> 
+		// 				<Submessage/>
+		// 			</div>
+		// 		)
+		// 	}
+		// });
+
+		// var Submessage = React.createClass({
+		// 	render:function(){
+		// 		return (
+		// 			<h3>写代码很有意思</h3>
+		// 		)
+		// 	}
+		// });
+
+
+		// var messageBox = React.render( <MessageBox/>, 
+		// 	document.getElementById('app'),
+		// 	function(){
+		// 		console.log('渲染完成啦！！');
+		// 	}
+		// )
+
+		// 自己的练习1  总结：组件内部 每个方法中间用逗号分隔，别忘写
 		var MessageBox = React.createClass({
 			getInitialState:function(){
-				return {
-					isVisible: true,
-					titleMessage: '你好世界（来自state哦）',
+				return{
+					isVisible:true,
+					title:'你好，来份麻辣烫'
 				}
 			},
-			render:function(){	
-				var styleObj={
-					display: this.state.isVisible ? 'block' : 'none',
+			render:function(){
+				var styleObj = {
+					display: this.state.isVisible? 'block':'none'
 				}
-
-				return ( 
-					<div>
-						<h1 style={styleObj}>{this.state.titleMessage}</h1> 
-						<Submessage/>
+				return(
+					<div style={styleObj}>
+						<h1>{this.state.title}</h1>
 					</div>
 				)
 			}
-		});
+		})
 
-		var Submessage = React.createClass({
-			render:function(){
-				return (
-					<h3>写代码很有意思</h3>
-				)
-			}
-		});
-
-
-		var messageBox = React.render( <MessageBox/>, 
-			document.getElementById('app'),
-			function(){
-				console.log('渲染完成啦！！');
-			}
+		React.render(
+			<MessageBox/>,
+			document.getElementById('app')
 		)
-
 
 	</script>
 
