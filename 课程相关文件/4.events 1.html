@@ -13,14 +13,14 @@
 		var ClickApp = React.createClass({
 			getInitialState:function(){
 				return {
-					clickCount: 0,				}
+					clickCount: 0,				
+				}
 			},
 			handleClick: function(e){
 				this.setState({
 					clickCount: this.state.clickCount + 1,
 				});
 				console.log(e.nativeEvent);
-
 			},
 			render: function(){
 				return (

@@ -14,11 +14,11 @@
 			getInitialState:function(){
 				return {
 					isVisible: true,
-					subMessages:[
-						'我会代码搬砖',
-						'以及花式搬砖',
-						'不说了，工头叫我回去搬砖了。。。。。。',
-					]
+					// subMessages:[
+					// 	'如果没有默认的子消息就显示我1',
+					// 	'如果没有默认的子消息就显示我2',
+					// 	'如果没有默认的子消息就显示我3',
+					// ]
 				}
 			},
 			render:function(){	
@@ -55,12 +55,14 @@
 			}
 		});
 
-		var title = '你好世界（来自props哦）';
+		var title = 'MessageBox组件的title（来自props）';
 
-		var messageBox = React.render( <MessageBox title={title}/>, 
+		var messageBox = React.render(
+			<MessageBox title={title}/>,
 			document.getElementById('app')
 		)
 
+// 总结：
 
 	</script>
 
