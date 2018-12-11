@@ -1,4 +1,4 @@
-Learning React
+[Learning React](https://github.com/MoonHighway/learning-react)
 =================
 
 ## Qilei Note
