@@ -14,22 +14,20 @@
     // The new way... with classes（新方法）
 
     class Vacation {
-
-    constructor(destination, length) {
-      this.destination = destination
-      this.length = length
-    }
-
-    print() {
-      console.log(`${this.destination} will take ${this.length} days.`)
-    }
-
+      constructor(destination, length) {
+        this.destination = destination
+        this.length = length
+      }
+      print() {
+        console.log(`${this.destination} will take ${this.length} days.`)
+      }
     }
 
     const trip = new Vacation("Santiago, Chile", 9)
 
     trip.print()
 
+//打印： Santiago, Chile will take 9 days.
 </script>
 </body>
 </html>

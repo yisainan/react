@@ -18,11 +18,9 @@
         this.destination = destination
         this.length = length
       }
-
       print() {
         console.log(`${this.destination} will take ${this.length} days.`)
       }
-
     }
 
     class Expedition extends Vacation {
@@ -30,7 +28,6 @@
         super(destination, length)
         this.gear = gear
       }
-
       print() {
         super.print()
         console.log(`bring your ${this.gear.join(" and your ")}`)
@@ -38,13 +35,13 @@
     }
 
     const trip = new Expedition(
-      "Mt. Whitney",
-      3,
-      ["sunglasses", "prayer flags", "camera"]
+      "Mt. Whitney",3,["sunglasses", "prayer flags", "camera"]
     )
 
     trip.print()
 
+//打印： Mt. Whitney will take 3 days.
+// bring your sunglasses and your prayer flags and your camera
 </script>
 </body>
 </html>
