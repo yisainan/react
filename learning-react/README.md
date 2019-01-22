@@ -4,6 +4,8 @@
 ## Qilei Note
 * Chapter 1
    *  安装node及npm 等环境
+   *  谷歌浏览器安装对应的插件
+   *  使用JSBin运行demo（访问速度太慢了）
 * Chapter 2
    * 01-声明变量
      * const的使用
