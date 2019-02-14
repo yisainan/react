@@ -105,8 +105,8 @@
 
 ## 项目打包运行
 * 项目编译打包并运行
-  * npm build
-  * npm install -g pushstate-server
+  * npm run build
+  * npm install -g pushstate-server[装一个静态的服务器，Win本会有权限问题，在管理员身份安装]
   * pushstate-server build
   * start http://localhost:9000
 * 配置sass预编译器环境2
