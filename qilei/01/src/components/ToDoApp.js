@@ -10,6 +10,10 @@ class ToDoApp extends React.Component {
     })
   };
 
+  onInputChange = (event) => {
+    this.setState({ newToDo: event.target.value}); // updates state to new value when user changes the input value
+  };
+
   render() {
     return (
       <div className="row">
