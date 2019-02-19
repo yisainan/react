@@ -22,7 +22,7 @@ class ToDoApp extends React.Component {
   };
 
   render(){
-    console.log(this.props)
+    console.log('this.props', this.props)
     return (
       <div className="row">
         <div className="col-md-8 col-md-offset-2">

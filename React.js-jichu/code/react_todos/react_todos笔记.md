@@ -132,6 +132,6 @@
   * 使用: 
     ```
     import PubSub from 'pubsub-js' //引入
-    PubSub.subscribe('delete', function(data){ }); //订阅
-    PubSub.publish('delete', data) //发布消息
+    PubSub.subscribe('delete', function(data){ }); //订阅 在父组件
+    PubSub.publish('delete', data) //发布消息 在子组件  类比vue的子传父 一样！！
     ```
