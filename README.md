@@ -15,4 +15,5 @@
 | [react.docschina.org](https://react.docschina.org) | react中文网站对应demo |  |
 | [React中文文档](https://react.docschina.org/) |  |  |
 | React.js-dianping、React.js-jichu、React.js-rumen-and-shijian、React.js-xinwentoutiao | 见网盘 |  |
-
+| [react-router-tutorial](https://github.com/reactjs/react-router-tutorial) | react router 官方教程 | 非常详细！ |
+| [react-webpack](https://github.com/dengshasha/react-webpack) | 搭建react+webpack+es6环境  |  |
