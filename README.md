@@ -18,6 +18,3 @@
 | [react-webpack](https://github.com/dengshasha/react-webpack) | 搭建react+webpack+es6环境  |  |
 | [Learning React](https://github.com/MoonHighway/learning-react) | Learning React 犀牛书 |  |
 | [react](https://github.com/duxianwei520/react) | React全家桶后台管理框架  |
-
-
-(791MB-2019/03/02)
