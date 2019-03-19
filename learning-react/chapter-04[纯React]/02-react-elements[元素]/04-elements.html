@@ -15,31 +15,6 @@
 
 <script>
 
-    // const items = [
-    //     "1 lb Salmon",
-    //     "1 cup Pine Nuts",
-    //     "2 cups Butter Lettuce",
-    //     "1 Yellow Squash",
-    //     "1/2 cup Olive Oil",
-    //     "3 cloves of Garlic"
-    // ]
-
-    // const ingredients = React.createElement(
-    //     "ul",
-    //     { className: "ingredients" },
-    //     items.map((ingredient, i) =>
-    //         React.createElement("li", null, ingredient)
-    //     )
-    // )
-
-    // ReactDOM.render(
-    //   ingredients,
-    //   document.getElementById('react-container')
-    // )
-
-    // console.log('ingredients', ingredients)
-
-
 // 1  总结：items.map中使用的箭头函数  (()=>...)  注意没有{}
     const items = [1,2,3,4,5]
 
@@ -47,7 +22,11 @@
         "ul",
         {className:"qilei"},
         items.map((item, i)=>
-            React.createElement("li",null,item)
+            //这种写法会报错： Warning: Each child in a list should have a unique "key" prop.
+            // React.createElement("li",null,item)
+
+            // 推荐写法
+            React.createElement("li",{ key: i },item)
         )
     )
     ReactDOM.render(
@@ -55,6 +34,9 @@
         document.getElementById('react-container')
     )
     console.log('qileiDeComponent', qileiDeComponent)
+
+// 创建的dom如下：
+// <ul class="qilei"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li></ul>
 </script>
 
 </body>
