@@ -38,21 +38,32 @@
 
 // 1 有元素的使用=>组件  都是类似的
 
-    class myComponent extends React.Component {
-        render() {
-            return React.createElement("ol",{className:'qilei'},
-            React.createElement("li",null,"1111"),
-            React.createElement("li",null,"2222"),
-            React.createElement("li",null,"333"),
-            React.createElement("li",null,"44")
-            )   
-        }
-    }
-    const myComponent1 = React.createElement(myComponent,null,null)
-    ReactDOM.render(
-        myComponent1,
+    // class myComponent extends React.Component {
+    //     render() {
+    //         return React.createElement("ol",{className:'qilei'},
+    //             React.createElement("li",null,"1111"),
+    //             React.createElement("li",null,"2222"),
+    //             React.createElement("li",null,"333"),
+    //             React.createElement("li",null,"44")
+    //         )
+    //     }
+    // }
+    // const myComponent1 = React.createElement(myComponent,null,null)
+    // ReactDOM.render(
+    //     myComponent1,
+    //     document.getElementById('react-container')
+    // )
+
+// 2 
+   class myComponent2 extends React.Component {
+       render() {
+           return `<h1>1111</h1>`
+       }
+   }
+   ReactDOM.render(
+        React.createElement(myComponent2,null,'11'),
         document.getElementById('react-container')
-    )
+   )
 </script>
 
 </body>

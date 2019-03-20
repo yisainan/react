@@ -40,23 +40,41 @@
     // )
 
 // 1
+    // class myComponent extends React.Component {
+    //     render() {
+    //         return React.createElement("ul",{className:"qilei"},
+    //             this.props.items.map((item, i)=>
+    //                 React.createElement('li',{key:i},item)
+    //             )
+    //         )
+    //     }
+    // }
+
+    // const items = [1,2,3,1,23,123]
+    // ReactDOM.render(
+    //     React.createElement(myComponent,{items}, null),
+    //     document.getElementById('react-container')
+    // )
+
+    // console.log('myComponent',myComponent)
+
+
+    //2  奇怪呀  .map(()={}) 只要加上{} 就会有不显示问题
     class myComponent extends React.Component {
-        render() {
-            return React.createElement("ul",{className:"qilei"},
-                this.props.items.map((item, i)=>
+        render () {
+            return React.createElement('ol',null,
+                this.props.arr.map((item, i) => 
                     React.createElement('li',{key:i},item)
                 )
             )
         }
     }
 
-    const items = [1,2,3,1,23,123]
+    const arr = [1,2,3,1,23,123]
     ReactDOM.render(
-        React.createElement(myComponent,{items}, null),
+        React.createElement(myComponent,{arr},null),
         document.getElementById('react-container')
-    )
-
-    console.log('myComponent',myComponent)
+    ) 
 </script>
 
 </body>
