@@ -18,4 +18,4 @@
 | [react-webpack](https://github.com/dengshasha/react-webpack) | 搭建react+webpack+es6环境  |  |
 | [Learning React](https://github.com/MoonHighway/learning-react) | Learning React 犀牛书 |  |
 | [react](https://github.com/duxianwei520/react) | React全家桶后台管理框架  |  |
-| [create-react-app-antd](https://github.com/ant-design/create-react-app-antd) | 1.Use antd in create-react-app <br/>>2.在create-react-app中使用antd  | Create React App + Ant Design |
+| [create-react-app-antd](https://github.com/ant-design/create-react-app-antd) | 1.Use antd in create-react-app <br/>2.在create-react-app中使用antd  | Create React App + Ant Design |
