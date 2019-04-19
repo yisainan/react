@@ -4,8 +4,7 @@
 | 名称 | 简介 | 知识点 |
 | ---- | ---- | ---- |
 | myCode | 个人学习代码 | 都是一些react基础代码  |
-| [awesome-react-components](https://github.com/brillout/awesome-react-components) | 
-React 组件/库集合 |  |
+| [awesome-react-components](https://github.com/brillout/awesome-react-components) | React 组件/库集合 |  |
 | [learning-react](https://github.com/MoonHighway/learning-react) |  |  |
 | [react京东首页构建](https://github.com/Cathy0807/react) |  |  |
 | [react-demos](https://github.com/ruanyf/react-demos) |  |  |
