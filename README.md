@@ -7,7 +7,7 @@
 | [awesome-react-components](https://github.com/brillout/awesome-react-components) | React 组件/库集合 |  |
 | [react京东首页构建](https://github.com/Cathy0807/react) |  |  |
 | [react-demos](https://github.com/ruanyf/react-demos) |  |  |
-| [react-music-player](https://github.com/xiaolin3303/react-music-player) |  |  |
+| [react-music-player](https://github.com/xiaolin3303/react-music-player) | Music player build with React, learn how to use React  |  |
 | [react-pxq](https://github.com/bailicangdu/react-pxq) | 一个 react + redux 的完整项目 和 个人总结 |  |
 | [react-redux-ducks](https://github.com/lijie33402/react-redux-ducks) |  |  |
 | [react.docschina.org](https://react.docschina.org) | react中文网站对应demo |  |
