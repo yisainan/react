@@ -9,7 +9,7 @@
 | [react-demos](https://github.com/ruanyf/react-demos) |  |  |
 | [react-music-player](https://github.com/xiaolin3303/react-music-player) | Music player build with React, learn how to use React  |  |
 | [react-pxq](https://github.com/bailicangdu/react-pxq) | 一个 react + redux 的完整项目 和 个人总结 |  |
-| [react-redux-ducks](https://github.com/lijie33402/react-redux-ducks) |  |  |
+| [react-redux-ducks](https://github.com/lijie33402/react-redux-ducks) | 这是一个从头搭建一个react简单应用的教程 |  |
 | [react.docschina.org](https://react.docschina.org) | react中文网站对应demo |  |
 | [React中文文档](https://react.docschina.org/) |  |  |
 | React.js-dianping、React.js-jichu、React.js-rumen-and-shijian、React.js-xinwentoutiao | 见网盘 |  |
