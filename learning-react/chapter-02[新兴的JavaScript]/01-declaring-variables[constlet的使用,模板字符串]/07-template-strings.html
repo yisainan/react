@@ -15,11 +15,47 @@
     const middleName = "William"
     const firstName = "John"
 
-    // string concatenation
+    // 1.string concatenation 字符串连接
 
     console.log(lastName + ", " + firstName + " " + middleName)
 
     // ==> Ferrell, John William
+
+    // 2.ES6 template strings ES6模板字符串
+
+    console.log(`${lastName}, ${firstName} ${middleName}`)
+
+    // ==> Ferrell, John William
+
+    var lastName = "Ferrell"
+    var middleName = "William"
+    var firstName = "John"
+
+    var ticketAgent = "The iO Theater"
+    var event = "TJ & Dave"
+    var qty = 2
+    var price = 10
+
+    // 3.ES6 template strings do not ignore whitespace ES6模板字符串不要忽略空格
+
+    console.log(`
+
+    Hello ${firstName},
+
+    Thanks for ordering ${qty} tickets to ${event}.
+
+    Order Details
+     ${firstName} ${middleName} ${lastName}
+     ${qty} x $${price} = $${qty*price} to ${event}
+
+    You can pick your tickets up at will call 30 minutes before
+    the show.
+
+    Thanks,
+
+    ${ticketAgent}
+
+    `)
 </script>
 </body>
 </html>

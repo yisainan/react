@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no" />
     <meta charset="utf-8">
     <title>Const</title>
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
 </head>
-<body>
-<h1>Const</h1>
-<p>Open the console</p>
-<script type="text/babel">
 
-    // The value of a variable can change
+<body>
+    <h1>Const</h1>
+    <p>Open the console</p>
+    <script type="text/babel">
+
+    // 1.The value of a variable can change
 
     var pizza = true
     pizza = false
     console.log(pizza)
 
+    // 输出： false
+
+
+    // 2.ES6 introduces constants （const 是 constants 的缩写，不变）
+
+    const pizza = true
+    pizza = false
+
+
+    // 输出： Uncaught SyntaxError: Inline Babel script: "pizza" is read-only
 </script>
 </body>
+
 </html>
