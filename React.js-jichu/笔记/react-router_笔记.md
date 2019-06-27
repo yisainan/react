@@ -6,7 +6,7 @@
   * 改变#会改变浏览器的访问历史
   * window.location.hash读取#值
   * window.onhashchange = func 监听hash改变
-1. reat-router
+1. react-router
   * github主页: https://github.com/ReactTraining/react-router
   * 官网教程: https://github.com/reactjs/react-router-tutorial/(官方教程)
   * 一峰教程: http://www.ruanyifeng.com/blog/2016/05/react_router.html?utm_source=tool.lu
