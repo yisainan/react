@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>学习React！！</title>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script src="bower_components/react/react.js"></script>
+    <script src="bower_components/react/JSXTransformer.js"></script>
+	<script type="text/jsx">
+		var stateRecordMixin = {
+            componentWillMount:function(){ // 组件即将被装载、渲染到页面上
+				this.oldStates = [];
+			},
+			componentWillUpdate: function(nextProp,nextState){ // 组件即将更新不能修改属性和状态
+				this.oldStates.push(nextState);
+			},
+			previousState:function(){
+				var index = this.oldStates.length -1;
+				return index == -1 ? {} : this.oldStates[index];
+			}
+		}
+
+		var MessageBox = React.createClass({
+            mixins: [stateRecordMixin],
+            getInitalState: function(){
+                return {
+                    count: 0
+                }
+            },
+            render: function(){
+                return (
+                    <div>
+
+                        
+                    </div>
+                )
+            }
+		});
+
+		var Submessage = React.createClass({
+			
+		});
+
+
+		var messageBox = React.render( <MessageBox/>, 
+			document.getElementById('app')
+		)
+
+
+	</script>
+
+
+</body>
+
+</html>

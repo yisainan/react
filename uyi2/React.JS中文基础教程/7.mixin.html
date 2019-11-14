@@ -11,10 +11,10 @@
     <script src="bower_components/react/JSXTransformer.js"></script>
 	<script type="text/jsx">
 		var stateRecordMixin = {
-			componentWillMount:function(){
+			componentWillMount:function(){ // 组件即将被装载、渲染到页面上
 				this.oldStates = [];
 			},
-			componentWillUpdate: function(nextProp,nextState){
+			componentWillUpdate: function(nextProp,nextState){ // 组件即将更新不能修改属性和状态
 				this.oldStates.push(nextState);
 			},
 			previousState:function(){
