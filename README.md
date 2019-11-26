@@ -6,7 +6,7 @@
 | myCode | 个人学习代码 | 都是一些react基础代码  |
 | [awesome-react-components](https://github.com/brillout/awesome-react-components) | React 组件/库集合 |  |
 | [react京东首页构建](https://github.com/Cathy0807/react) |  |  |
-| [react-demos](https://github.com/ruanyf/react-demos) |  |  |
+| [react-demos](https://github.com/ruanyf/react-demos) | a collection of simple demos of React.js |  |
 | [react-music-player](https://github.com/xiaolin3303/react-music-player) | Music player build with React, learn how to use React  |  |
 | [react-pxq](https://github.com/bailicangdu/react-pxq) | 一个 react + redux 的完整项目 和 个人总结 |  |
 | [react-redux-ducks](https://github.com/lijie33402/react-redux-ducks) | 这是一个从头搭建一个react简单应用的教程 |  |

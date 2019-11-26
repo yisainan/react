@@ -4,7 +4,7 @@
   * 项目的整体技术架构为: react + webpack + es6 + eslint
 * 创建项目并启动
   * npm install -g create-react-app
-  * create-react-app hello-react
+  * create-react-app hello-react`
   * cd hello-react
   * npm start
 * 说明:
