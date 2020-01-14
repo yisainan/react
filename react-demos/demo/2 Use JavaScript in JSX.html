@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="../build/react.js"></script>
-    <script src="../build/react-dom.js"></script>
-    <script src="../build/browser.min.js"></script>
-  </head>
-  <body>
-    <div id="example"></div>
-    <script type="text/babel">
-      var names = ['Alice', 'Emily', 'Kate'];
+
+<head>
+  <script src="../build/react.js"></script>
+  <script src="../build/react-dom.js"></script>
+  <script src="../build/browser.min.js"></script>
+</head>
+
+<body>
+  <div id="example"></div>
+  <script type="text/babel">
+    var names = ['Alice', 'Emily', 'Kate'];
 
       // ReactDOM.render(
       //   <div>
@@ -22,14 +24,25 @@
       // );
 
       //1  ReactDOM: dom-->大写DOM
+      // ReactDOM.render(
+      //   <div>{
+      //     names.map(function (name, index) {
+      //       return <div key={index}>Hello{name}</div>
+      //     })
+      //   }</div>,
+      //   document.getElementById('example')
+      // )
+
+      // 2
       ReactDOM.render(
-        <div>{
-          names.map(function (name, index) {
-            return <div key={index}>Hello{name}</div>
+        <ul>{
+          names.map((name, index) => {
+            return <li key={index}>2--{name}</li>
           })
-        }</div>,
+        }</ul>,
         document.getElementById('example')
       )
     </script>
-  </body>
+</body>
+
 </html>

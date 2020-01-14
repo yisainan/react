@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="../build/react.js"></script>
-    <script src="../build/react-dom.js"></script>
-    <script src="../build/browser.min.js"></script>
-  </head>
-  <body>
-    <div id="example"></div>
-    <script type="text/babel">
-      // var HelloMessage = React.createClass({
+
+<head>
+  <script src="../build/react.js"></script>
+  <script src="../build/react-dom.js"></script>
+  <script src="../build/browser.min.js"></script>
+</head>
+
+<body>
+  <div id="example"></div>
+  <script type="text/babel">
+    // var HelloMessage = React.createClass({
       //   render: function() {
       //     return <h1>Hello {this.props.name}</h1>;
       //   }
@@ -21,15 +23,28 @@
 
       
       // 1.  props 的使用
-      var HelloWorld = React.createClass({
-        render: function() {
+      // var HelloWorld = React.createClass({
+      //   render: function() {
+      //     return <h2>hello {this.props.name}</h2>
+      //   }
+      // })
+      // ReactDOM.render(
+      //   <HelloWorld name="world"></HelloWorld>,
+      //   document.getElementById("example")
+      // )
+
+      // 2
+      var name = 'qi'
+      var ZuJian = React.createClass({
+        render () {
           return <h2>hello {this.props.name}</h2>
         }
       })
       ReactDOM.render(
-        <HelloWorld name="world"></HelloWorld>,
+        <ZuJian name={name}></ZuJian>,
         document.getElementById("example")
       )
     </script>
-  </body>
+</body>
+
 </html>

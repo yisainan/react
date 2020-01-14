@@ -15,7 +15,9 @@
 <script type="text/babel">
 
   /*
-   为什么列表的key尽量不要用index
+   为什么列表的key尽量不要用index?
+   答：很可能产生没有必要的真实DOM更新，效率低 
+
    http://jsbin.com/wohima/edit?js,output
    http://taobaofed.org/blog/2016/08/24/react-key/?utm_source=tuicool&utm_medium=referral
    简单来说: 当数组中的数据发生变化时: React 比较更新前后的元素 key 值，

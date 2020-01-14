@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="../build/react.js"></script>
-    <script src="../build/react-dom.js"></script>
-    <script src="../build/browser.min.js"></script>
-    <script src="../build/jquery.min.js"></script>
-  </head>
-  <body>
-    <div id="example"></div>
-    <script type="text/babel">
-var RepoList = React.createClass({
+
+<head>
+  <script src="../build/react.js"></script>
+  <script src="../build/react-dom.js"></script>
+  <script src="../build/browser.min.js"></script>
+  <script src="../build/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="example"></div>
+  <script type="text/babel">
+    var RepoList = React.createClass({
   getInitialState: function() {
     return {
       loading: true,
@@ -53,5 +55,6 @@ ReactDOM.render(
   document.getElementById('example')
 );
     </script>
-  </body>
+</body>
+
 </html>
