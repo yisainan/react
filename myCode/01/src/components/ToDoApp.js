@@ -4,16 +4,14 @@ import Input from './Input.js'
 class ToDoApp extends React.Component {
 
   componentWillMount(){ // run before the render method
-    this.setState({ // add an array of strings to state.
+    this.setState({
       list: ['thing1', 'thing2', 'thing3'],
-       newToDo: 'test'
+      newToDo: 'test'
     })
   };
-
   onInputChange = (event) => {
     this.setState({ newToDo: event.target.value}); // updates state to new value when user changes the input value
   };
-
   render() {
     return (
       <div className="row">
@@ -23,7 +21,7 @@ class ToDoApp extends React.Component {
               <h1>My To Do App</h1>
               <hr/>
               <List listItems={this.state.list} />
-              <Input/>
+              <Input value={this.state.newToDo}/>
             </div>
           </div>
         </div>
