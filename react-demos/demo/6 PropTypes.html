@@ -1,36 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="../build/react.js"></script>
-    <script src="../build/react-dom.js"></script>
-    <script src="../build/browser.min.js"></script>
-  </head>
-  <body>
-    <div id="example"></div>
-    <script type="text/babel">
 
-      // var data = 123; // react.js:19287 Warning: Failed propType: Invalid prop `title` of type `number` supplied to `MyTitle`, expected `string`
-      var data = 'string';
+<head>
+  <script src="../build/react.js"></script>
+  <script src="../build/react-dom.js"></script>
+  <script src="../build/browser.min.js"></script>
+</head>
 
-      var MyTitle = React.createClass({
-        propTypes: {
-          title: React.PropTypes.string.isRequired,
-        },
+<body>
+  <div id="example"></div>
+  <script type="text/babel">
 
-        render: function() {
-          return <h1> {this.props.title} </h1>;
-        }
-      });
+    // var data = 123; // react.js:19287 Warning: Failed propType: Invalid prop `title` of type `number` supplied to `MyTitle`, expected `string`
+      // var data = 'string';
 
-      ReactDOM.render(
-        <MyTitle title={data} />,
-        document.getElementById('example')
-      );
+      // var MyTitle = React.createClass({
+      //   propTypes: {
+      //     title: React.PropTypes.string.isRequired,
+      //   },
+
+      //   render: function() {
+      //     return <h1> {this.props.title} </h1>;
+      //   }
+      // });
+
+      // ReactDOM.render(
+      //   <MyTitle title={data} />,
+      //   document.getElementById('example')
+      // );
 
       // <组件名 属性名={数值}> ==> this.props.属性名
 
-      // 
+      // 1
+      var MyComponent = React.createClass({
+        propTypes: {
+          title: React.PropTypes.string.isRequired
+        },
+        render () {
+          return <div>{this.props.title}</div>
+        }
+      });
+      ReactDOM.render(
+        <MyComponent title="666" />,
+        document.getElementById('example')
+      );
     </script>
-  </body>
-</html>
+</body>
 
+</html>

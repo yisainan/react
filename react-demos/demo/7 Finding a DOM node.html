@@ -9,27 +9,47 @@
     <div id="example"></div>
     <script type="text/babel">
 
+      // var MyComponent = React.createClass({
+      //   handleClick: function() {
+      //     this.refs.myTextInput.focus();
+      //   },
+      //   render: function() {
+      //     return (
+      //       <div>
+      //         <input type="text" ref="myTextInput" />
+      //         <input type="button" value="Focus the text input" onClick={this.handleClick} />
+      //       </div>
+      //     );
+      //   }
+      // });
+
+      // ReactDOM.render(
+      //   <MyComponent />,
+      //   document.getElementById('example')
+      // );
+      
+      // 1.this.refs.myTextInput.focus()
+      // 2.ref="myTextInput"
+      // 3.onClick={this.方法名}
+
+      // 1
       var MyComponent = React.createClass({
-        handleClick: function() {
-          this.refs.myTextInput.focus();
+        handleClick(){
+          this.refs.myTextInput.focus()
         },
-        render: function() {
+        render(){
           return (
             <div>
               <input type="text" ref="myTextInput" />
-              <input type="button" value="Focus the text input" onClick={this.handleClick} />
+              <button onClick={this.handleClick}></button>
             </div>
-          );
+          )
         }
-      });
-
+      })
       ReactDOM.render(
         <MyComponent />,
         document.getElementById('example')
       );
-      // 1.this.refs.myTextInput.focus()
-      // 2.ref="myTextInput"
-      // 3.onClick={this.方法名}
     </script>
   </body>
 </html>

@@ -1,45 +1,66 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script src="../build/react.js"></script>
-    <script src="../build/react-dom.js"></script>
-    <script src="../build/browser.min.js"></script>
-    <script src="../build/jquery.min.js"></script>
-  </head>
-  <body>
-    <div id="example"></div>
-    <script type="text/babel">
+
+<head>
+  <script src="../build/react.js"></script>
+  <script src="../build/react-dom.js"></script>
+  <script src="../build/browser.min.js"></script>
+  <script src="../build/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="example"></div>
+  <script type="text/babel">
+//     var UserGist = React.createClass({
+//   getInitialState: function() {
+//     return {
+//       username: '',
+//       lastGistUrl: ''
+//     };
+//   },
+
+//   componentDidMount: function() {
+//     $.get(this.props.source, function(result) {
+//       var lastGist = result[0];
+//       this.setState({
+//         username: lastGist.owner.login,
+//         lastGistUrl: lastGist.html_url
+//       });
+//     }.bind(this));
+//   },
+
+//   render: function() {
+//     return (
+//       <div>
+//         {this.state.username}'s last gist is <a href={this.state.lastGistUrl}>here</a>.
+//       </div>
+//     );
+//   }
+// });
+
+// ReactDOM.render(
+//   <UserGist source="https://api.github.com/users/octocat/gists" />,
+//   document.getElementById('example')
+// );
+
+// 1 注意 $.get(url, func)
 var UserGist = React.createClass({
-  getInitialState: function() {
-    return {
-      username: '',
-      lastGistUrl: ''
-    };
+  componentDidMount(){
+    $.get("https://api.github.com/users/octocat/gists",function(res){
+      console.log(res)
+    })
   },
-
-  componentDidMount: function() {
-    $.get(this.props.source, function(result) {
-      var lastGist = result[0];
-      this.setState({
-        username: lastGist.owner.login,
-        lastGistUrl: lastGist.html_url
-      });
-    }.bind(this));
-  },
-
-  render: function() {
-    return (
-      <div>
-        {this.state.username}'s last gist is <a href={this.state.lastGistUrl}>here</a>.
-      </div>
-    );
+  render(){
+    return(
+      <div></div>
+    )
   }
-});
-
+})
 ReactDOM.render(
-  <UserGist source="https://api.github.com/users/octocat/gists" />,
+  <UserGist />,
   document.getElementById('example')
 );
     </script>
-  </body>
+</body>
+
 </html>

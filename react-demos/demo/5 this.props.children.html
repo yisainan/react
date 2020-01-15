@@ -10,27 +10,27 @@
 <body>
   <div id="example"></div>
   <script type="text/babel">
-    var NotesList = React.createClass({
-        render: function() {
-          return (
-            <ol>
-              {
-                React.Children.map(this.props.children, function(child){
-                  return <li>{child}</li>
-                })
-              }
-            </ol>
-          );
-        }
-      });
+    // var NotesList = React.createClass({
+    //     render: function() {
+    //       return (
+    //         <ol>
+    //           {
+    //             React.Children.map(this.props.children, function(child){
+    //               return <li>{child}</li>
+    //             })
+    //           }
+    //         </ol>
+    //       );
+    //     }
+    //   });
 
-      ReactDOM.render(
-        <NotesList>
-          <span>hello</span>
-          <span>world</span>
-        </NotesList>,
-        document.getElementById('example')
-      );
+    //   ReactDOM.render(
+    //     <NotesList>
+    //       <span>hello</span>
+    //       <span>world</span>
+    //     </NotesList>,
+    //     document.getElementById('example')
+    //   );
 
       // 1.React.Children.map   2.this.props.children children首字母小写
 
@@ -52,7 +52,24 @@
       // </div>
 
       // 2
-      var List 
+      var List = React.createClass({
+        render(){
+          return (
+            <ol>{
+              React.Children.map(this.props.children, function(child){
+                return <li>{child}</li>
+              })
+            }</ol>
+          )
+        }
+      })
+      ReactDOM.render(
+        <List>
+          <div>1</div>
+          <div>2</div>
+        </List>,
+        document.getElementById('example')
+      )
     </script>
 </body>
 

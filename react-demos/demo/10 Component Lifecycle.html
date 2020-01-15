@@ -8,37 +8,67 @@
   <body>
     <div id="example"></div>
     <script type="text/babel">
-      var Hello = React.createClass({
-        getInitialState: function () {
-          return {
-            opacity: 1.0
-          };
-        },
+      // var Hello = React.createClass({
+      //   getInitialState: function () {
+      //     return {
+      //       opacity: 1.0
+      //     };
+      //   },
 
-        componentDidMount: function () {
-          this.timer = setInterval(function () {
+      //   componentDidMount: function () {
+      //     this.timer = setInterval(function () {
+      //       var opacity = this.state.opacity;
+      //       opacity -= .05;
+      //       if (opacity < 0.1) {
+      //         opacity = 1.0;
+      //       }
+      //       this.setState({
+      //         opacity: opacity
+      //       });
+      //     }.bind(this), 100);
+      //   },
+
+      //   render: function () {
+      //     return (
+      //       <div style={{opacity: this.state.opacity}}>
+      //         Hello {this.props.name}
+      //       </div>
+      //     );
+      //   }
+      // });
+
+      // ReactDOM.render(
+      //   <Hello name="world"/>,
+      //   document.getElementById('example')
+      // );
+
+      // 1 注意 style={{opacity: this.state.opacity}} 写法
+      var MyComponent = React.createClass({
+        getInitialState(){
+          return {
+            opacity: 1
+          }
+        },
+        componentDidMount(){
+          setInterval(function(){
             var opacity = this.state.opacity;
-            opacity -= .05;
-            if (opacity < 0.1) {
-              opacity = 1.0;
+            opacity -= 0.05
+            if (opacity < 0) {
+              opacity = 1
             }
             this.setState({
               opacity: opacity
-            });
-          }.bind(this), 100);
+            })
+          }.bind(this),100)
         },
-
-        render: function () {
-          return (
-            <div style={{opacity: this.state.opacity}}>
-              Hello {this.props.name}
-            </div>
-          );
+        render(){
+          return(
+            <div style={{opacity: this.state.opacity}}>666666666</div>
+          )
         }
-      });
-
+      })
       ReactDOM.render(
-        <Hello name="world"/>,
+        <MyComponent/>,
         document.getElementById('example')
       );
     </script>
