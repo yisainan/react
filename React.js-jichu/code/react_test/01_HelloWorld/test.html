@@ -27,14 +27,19 @@
 <script type="text/javascript" src="../js/react-dom.js"></script>
 <script type="text/javascript" src="../js/babel.min.js"></script>
 <script type="text/babel">
-  //页面中的真实容器元素！！！！！！！
-  var containDiv = document.getElementById('demo');
-  //react的虚拟DOM对象 ！！！！！！！
-  var vDom = <div id="demo">Hello, React!</div>;  //不是字符串, 不能加引号
-  //将虚拟DOM对象渲染到页面元素中
-  ReactDOM.render(vDom, containDiv);
+  // //页面中的真实容器元素！！！！！！！
+  // var containDiv = document.getElementById('demo');
+  // //react的虚拟DOM对象 ！！！！！！！
+  // var vDom = <div id="demo">Hello, React!</div>;  //不是字符串, 不能加引号
+  // //将虚拟DOM对象渲染到页面元素中
+  // ReactDOM.render(vDom, containDiv);
 
-  //页面结果: <div id="demo"><div id="demo">Hello, React!</div></div>
+  // //页面结果: <div id="demo"><div id="demo">Hello, React!</div></div>
+
+  // 1
+  var realDom = document.getElementById('demo')
+  var virtualDom = <div>我是虚拟Dom</div>
+  ReactDOM.render(virtualDom, realDom)
 </script>
 
 </body>

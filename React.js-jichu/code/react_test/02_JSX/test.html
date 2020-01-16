@@ -48,24 +48,40 @@
 
 <script type="text/babel">
 
-  //初始化动态数据
-  var title = 'I Love you!';
-  var myName = 'xfzhang';
+  // //初始化动态数据
+  // var title = 'I Love you!';
+  // var myName = 'xfzhang';
 
-  //创建虚拟dom : JSX
-  var vDOM = <h1 id="myTitle" name={myName}>{title}</h1>;
-  //将虚拟dom渲染中页面元素中
-  ReactDOM.render(vDOM, document.getElementById('example1'));
+  // //创建虚拟dom : JSX
+  // var vDOM = <h1 id="myTitle" name={myName}>{title}</h1>;
+  // //将虚拟dom渲染中页面元素中
+  // ReactDOM.render(vDOM, document.getElementById('example1'));
+
+  // var title = 'You Love me!';
+  // var myName = 'feifei';
+  // //创建虚拟dom : 纯JS(一般不用)
+  // var vDOM2 = React.createElement('h1', {id: 'myTitle2', name: myName.toUpperCase()}, title.toUpperCase());
+  // //将虚拟dom渲染中页面元素中
+  // ReactDOM.render(vDOM2, document.getElementById('example2'));
+
+  // 1
+  var title = '2020'
+  var myName = 'ql'
+  // JSX
+  var vDom1 = <h1 id="id" name={myName}>{title}</h1>
+  ReactDOM.render(
+    vDom1,
+    document.getElementById('example1')
+  )
+  // 纯js 
+  var vDom2 = React.createElement('h1', {id: 'id2', name: myName}, title)
+  ReactDOM.render(
+    vDom2,
+    document.getElementById('example2')
+  )
 </script>
 
-<script type="text/javascript">
-  var title = 'You Love me!';
-  var myName = 'feifei';
-  //创建虚拟dom : 纯JS(一般不用)
-  var vDOM2 = React.createElement('h1', {id: 'myTitle2', name: myName.toUpperCase()}, title.toUpperCase());
-  //将虚拟dom渲染中页面元素中
-  ReactDOM.render(vDOM2, document.getElementById('example2'));
-</script>
+
 
 </body>
 </html>

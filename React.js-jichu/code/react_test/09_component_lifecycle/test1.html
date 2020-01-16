@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>10_ComponentLife</title>
 </head>
+
 <body>
 
-<div id="example"></div>
+  <div id="example"></div>
 
-<script src="../js/react.js"></script>
-<script src="../js/react-dom.js"></script>
-<script src="../js/babel.min.js"></script>
-<script type="text/babel">
-  /*
+  <script src="../js/react.js"></script>
+  <script src="../js/react-dom.js"></script>
+  <script src="../js/babel.min.js"></script>
+  <script type="text/babel">
+    /*
   1. 组件的三个生命周期状态:
     * Mount：插入真实 DOM
     * Update：被重新渲染
@@ -41,60 +43,109 @@
     * 可以在componentWillUnmount()做一些收尾工作: 停止监听
     * 生命周期还有一个方法(后面需要时讲): componentWillReceiveProps
   */
-  class LifeCycle extends React.Component {
-    constructor(props) {
-      super(props);
-      console.log('constructor(): 创建组件对象');
+  // class LifeCycle extends React.Component {
+  //   constructor(props) {
+  //     super(props);
+  //     console.log('constructor(): 创建组件对象');
+
+  //     this.state = {
+  //       date: new Date().toLocaleString()
+  //     };
+  //   }
+
+  //   componentWillMount() {
+  //     console.log('componentWillMount(): 将要初始挂载');
+  //   }
+
+  //   componentDidMount() {
+  //     console.log('componentDidMount(): 已经初始挂载');
+
+  //     this.intervalId = setInterval(
+  //         () => {
+  //           this.setState({date: new Date().toLocaleString()});
+  //         },
+  //         1000
+  //     );
+  //   }
+
+  //   componentWillUpdate() {
+  //     console.log('componentWillUpdate(): 将要进行state更新');
+  //   }
+
+  //   componentDidUpdate() {
+  //     console.log('componentDidUpdate(): 已经更新');
+  //   }
+
+  //   componentWillUnmount() {
+  //     console.log('componentWillUnmount(): 将要被移除');
+  //     clearInterval(this.intervalId);
+  //   }
+
+  //   removeComp() {
+  //     ReactDOM.unmountComponentAtNode(document.getElementById('example'));
+  //   }
+
+  //   render() {
+  //     console.log('render(): 渲染内部虚拟DOM');
+  //     return (
+  //         <div>
+  //           <h2>{this.props.name}, 当前时间: {this.state.date}</h2>
+  //           <button onClick={this.removeComp}>移除组件</button>
+  //         </div>
+  //     );
+  //   }
+  // }
+
+  // ReactDOM.render(<LifeCycle name="JACK"/>, document.getElementById('example'));
+
+
+  // 1  ReactDOM.unmountComponentAtNode(document.getElementById('example'));
+  class LifeCycle extends React.Component{
+    constructor(props){
+      super(props)
+      console.log('constructor() 创建组件对象')
 
       this.state = {
         date: new Date().toLocaleString()
-      };
+      }
     }
-
-    componentWillMount() {
-      console.log('componentWillMount(): 将要初始挂载');
+    componentWillMount(){
+      console.log('componentWillMount() 将要初始挂载')
     }
-
-    componentDidMount() {
-      console.log('componentDidMount(): 已经初始挂载');
-
-      this.intervalId = setInterval(
-          () => {
-            this.setState({date: new Date().toLocaleString()});
-          },
-          1000
-      );
+    componentDidMount(){
+      console.log('componentDidMount() 已经初始挂载')
+      // 加一个定时器
+      this.timer = setInterval(()=>{
+        this.setState({
+          date: new Date().toLocaleString()
+        })
+      }, 1000)
     }
-
-    componentWillUpdate() {
+    componentWillUpdate(){
       console.log('componentWillUpdate(): 将要进行state更新');
     }
-
-    componentDidUpdate() {
+    componentDidUpdate(){
       console.log('componentDidUpdate(): 已经更新');
     }
-
-    componentWillUnmount() {
+    componentWillUnmount(){
       console.log('componentWillUnmount(): 将要被移除');
-      clearInterval(this.intervalId);
+      clearInterval(this.timer);
     }
-
-    removeComp() {
+    removeComp(){
       ReactDOM.unmountComponentAtNode(document.getElementById('example'));
     }
-
-    render() {
-      console.log('render(): 渲染内部虚拟DOM');
-      return (
-          <div>
-            <h2>{this.props.name}, 当前时间: {this.state.date}</h2>
-            <button onClick={this.removeComp}>移除组件</button>
-          </div>
-      );
+    render(){
+      console.log('render() 渲染虚拟DOM')
+      return(
+        <div>
+          <p>当前时间：{this.state.date}</p>
+          <button onClick={this.removeComp}>移出组件</button>
+        </div>
+      )
     }
   }
-
   ReactDOM.render(<LifeCycle name="JACK"/>, document.getElementById('example'));
 </script>
 </body>
+
 </html>

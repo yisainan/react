@@ -46,37 +46,69 @@
       2. 点击按钮, 提示第一个输入框中的值
       3. 当第2个输入框失去焦点时, 提示这个输入框中的值
     */
-    class RefsTest extends React.Component {
+    // class RefsTest extends React.Component {
+    //   constructor (props) {
+    //    super(props);
+
+    //     this.showMsg = this.showMsg.bind(this); // 强制给showMsg()绑定this(组件对象)
+    //     this.handleBlur = this.handleBlur.bind(this);
+    //   }
+
+    //   showMsg() {
+    //     // console.log(this); //this默认是null, 而不组件对象
+    //     const input = this.refs.msg;
+    //     alert(input.value);
+    //   }
+
+    //   handleBlur(event) {
+    //     const input = event.target;
+    //     alert(input.value);
+    //   }
+
+    //   render () {
+    //     return (
+    //       <div>
+    //         <input type="text" ref="msg"/>
+    //         <button onClick={this.showMsg}>提示输入数据</button>
+    //         <input type="text" placeholder="失去焦点提示数据" onBlur={this.handleBlur}/>
+    //       </div>
+    //     );
+    //   }
+    // }
+
+    // ReactDOM.render(<RefsTest/>, document.getElementById('example'));
+
+    // 1
+    class RefComponent extends React.Component{
       constructor (props) {
-       super(props);
+        super(props)
 
         this.showMsg = this.showMsg.bind(this); // 强制给showMsg()绑定this(组件对象)
-        this.handleBlur = this.handleBlur.bind(this);
+        this.handleBlur = this.handleBlur.bind(this); // 不绑定的话 报错：Uncaught TypeError: Cannot read property 'refs' of null
       }
-
       showMsg() {
-        // console.log(this); //this默认是null, 而不组件对象
-        const input = this.refs.msg;
-        alert(input.value);
+        const input = this.refs.msg.value;
+        console.log(input)
       }
-
-      handleBlur(event) {
-        const input = event.target;
-        alert(input.value);
+      handleBlur(e){
+        const value = e.target.value
+        console.log(value)
       }
-
-      render () {
-        return (
+      render() {
+        return(
           <div>
             <input type="text" ref="msg"/>
-            <button onClick={this.showMsg}>提示输入数据</button>
-            <input type="text" placeholder="失去焦点提示数据" onBlur={this.handleBlur}/>
+            <button onClick={this.showMsg}>按钮</button>
+            <input type="text" onBlur={this.handleBlur}/>
           </div>
-        );
+        )
       }
     }
+    ReactDOM.render(
+      <RefComponent />,
+      document.getElementById('example')
+    )
 
-    ReactDOM.render(<RefsTest/>, document.getElementById('example'));
   </script>
 </body>
 </html>

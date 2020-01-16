@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>04_component_props</title>
 </head>
+
 <body>
 
-<ul>
-  <li>姓名: 张三</li>
-  <li>性别: 女</li>
-  <li>年龄: 23</li>
-</ul>
-<hr>
+  <ul>
+    <li>姓名: 张三</li>
+    <li>性别: 女</li>
+    <li>年龄: 23</li>
+  </ul>
+  <hr>
 
-<div id="example"></div>
-<div id="example2"></div>
+  <div id="example"></div>
+  <div id="example2"></div>
 
-<script src="../js/react.js"></script>
-<script src="../js/react-dom.js"></script>
-<script src="../js/babel.min.js"></script>
+  <script src="../js/react.js"></script>
+  <script src="../js/react-dom.js"></script>
+  <script src="../js/babel.min.js"></script>
 
-<script type="text/babel">
-  /*
+  <script type="text/babel">
+    /*
   组件3大属性之一: props属性
   1. 每个组件对象都会有props(properties的简写)属性
   2. 组件标签的所有属性都保存在props中
@@ -53,50 +55,83 @@
     2). 如果年龄没有指定, 默认为18
   */
 
-  class Person extends React.Component {
+  // class Person extends React.Component {
 
-    constructor(props) {
-      super(props);
-      console.log(props); //查看所有属性
+  //   constructor(props) {
+  //     super(props);
+  //     console.log(props); //查看所有属性
+  //   }
+
+  //   render() {
+  //     return (
+  //       <ul>
+  //         <li>姓名: {this.props.name}</li>
+  //         <li>性别: {this.props.sex}</li>
+  //         <li>年龄: {this.props.age}</li>
+  //       </ul>
+  //     );
+  //   }
+  // }
+
+  // Person.propTypes = {
+  //  name: React.PropTypes.string.isRequired,
+  //  sex: React.PropTypes.string.isRequired,
+  //  age: React.PropTypes.number.isRequired
+  // };
+
+  // Person.defaultProps = {
+  //   sex: '男',
+  //   age: 18
+  // };
+
+  // /************************************************************************/
+
+  // //初始化数据
+  // let person = {name: 'atguigu', sex: '女', age: 3};
+  // // person = { name: 'atguigu', sex: '女', age: "3" }; // 会抛出警告age不是number类型的
+
+  // //根据数据动态渲染组件标签
+  // /*ReactDOM.render(<Person name={person.name} age={person.age} sex={person.sex}/>,
+  //     document.getElementById('example'));*/
+  // ReactDOM.render(
+  //   <Person {...person}/>,
+  //   document.getElementById('example')
+  // );
+
+  // const person2 = {name: 'xfzhang', sex: '女'};
+  // ReactDOM.render(
+  //   <Person {...person2}/>, 
+  //   document.getElementById('example2')
+  // );
+
+  // 1 defaultProps
+   class Person extends React.Component {
+    constructor (props) {
+      super(props)
     }
-
-    render() {
+    render(){
       return (
         <ul>
-          <li>姓名: {this.props.name}</li>
-          <li>性别: {this.props.sex}</li>
-          <li>年龄: {this.props.age}</li>
+          <li>姓名：{this.props.name}</li>  
+          <li>性别：{this.props.sex}</li> 
+          <li>年龄：{this.props.age}</li> 
         </ul>
-      );
+      )
     }
   }
-
   Person.propTypes = {
-   name: React.PropTypes.string.isRequired,
-   sex: React.PropTypes.string.isRequired,
-   age: React.PropTypes.number.isRequired
-  };
-
+    name: React.PropTypes.string.isRequired,
+    sex: React.PropTypes.string.isRequired,
+    age: React.PropTypes.number.isRequired
+  } 
   Person.defaultProps = {
     sex: '男',
-    age: 18
-  };
+    age: '18'
+  }
 
-  /************************************************************************/
-
-  //初始化数据
-  let person = {name: 'atguigu', sex: '女', age: 3};
-  // person = { name: 'atguigu', sex: '女', age: "3" }; // 会抛出警告age不是number类型的
-
-  //根据数据动态渲染组件标签
-  /*ReactDOM.render(<Person name={person.name} age={person.age} sex={person.sex}/>,
-      document.getElementById('example'));*/
-  ReactDOM.render(<Person {...person}/>,
-      document.getElementById('example'));
-
-  const person2 = {name: 'xfzhang', sex: '女'};
-  ReactDOM.render(<Person {...person2}/>, document.getElementById('example2'));
+  let person = {name: 'qi', age: 3}
+  ReactDOM.render(<Person name={person.name}/>, document.getElementById('example'))
 </script>
 </body>
-</html>
 
+</html>

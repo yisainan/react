@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>02_JSX_DEMO</title>
 </head>
+
 <body>
-<ul>
-  <li>A</li>
-  <li>B</li>
-  <li>C</li>
-</ul>
-<hr>
+  <ul>
+    <li>A</li>
+    <li>B</li>
+    <li>C</li>
+  </ul>
+  <hr>
 
-<div id="example1"></div>
-<div id="example2"></div>
+  <div id="example1"></div>
+  <div id="example2"></div>
 
-<script src="../js/react.js"></script>
-<script src="../js/react-dom.js"></script>
-<script src="../js/babel.min.js"></script>
+  <script src="../js/react.js"></script>
+  <script src="../js/react-dom.js"></script>
+  <script src="../js/babel.min.js"></script>
 
-<script type="text/babel">
-  /*
+  <script type="text/babel">
+    /*
    功能: 动态展示列表数据
    */
   /*
@@ -30,25 +32,35 @@
    3). array.map()的使用
    */
 
-  var names = ['Tom2', 'Jack2', 'Bob2'];
+  // var names = ['Tom2', 'Jack2', 'Bob2'];
 
+  // ReactDOM.render(
+  //   <ul>
+  //     {
+  //       names.map(function (item, index) {
+  //         return <li>{item}<p>{index}</p></li>;
+  //       })
+  //     }
+  //   </ul>,
+  //   document.getElementById('example1')
+  // );
+
+  // //简化编码(箭头函数)
+  // ReactDOM.render(
+  //     <ul>{names.map(item=><li>{item}</li>)}</ul>,
+  //     document.getElementById('example2')
+  // );
+
+  // 1
+  var arr = [1,2,3]
   ReactDOM.render(
-    <ul>
-      {
-        names.map(function (item, index) {
-          return <li>{item}<p>{index}</p></li>;
-        })
-      }
-    </ul>,
+    <ul>{arr.map((item, index) => {
+      return <li>{item}--{index}</li>
+    })}</ul>,
     document.getElementById('example1')
-  );
-
-  //简化编码(箭头函数)
-  ReactDOM.render(
-      <ul>{names.map(item=><li>{item}</li>)}</ul>,
-      document.getElementById('example2')
-  );
+  )
 
 </script>
 </body>
+
 </html>

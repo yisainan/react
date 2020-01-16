@@ -29,30 +29,55 @@
     3. 输入数据时, 下面的数据同步变化
   */
 
-  class TwoWay extends React.Component {
-    constructor(props) {
-      super(props);
+  // class TwoWay extends React.Component {
+  //   constructor(props) {
+  //     super(props);
+  //     this.state = {
+  //       msg: 'atguigu'
+  //     };
+  //     this.handleChange = this.handleChange.bind(this);
+  //   }
+
+  //   handleChange(event) {
+  //     let msg = event.target.value;
+  //     this.setState({msg});
+  //   }
+
+  //   render() {
+  //     return (
+  //         <div>
+  //           <input type="text" value={this.state.msg} onChange={this.handleChange}/>
+  //           <p>{this.state.msg}</p>
+  //         </div>
+  //     );
+  //   }
+  // }
+
+  // ReactDOM.render(<TwoWay/>, document.getElementById('example'));
+
+  // 1 一次成
+  class TwoWay extends React.Component{
+    constructor(props){
+      super(props)
       this.state = {
-        msg: 'atguigu'
-      };
-      this.handleChange = this.handleChange.bind(this);
+        value: '111'
+      }
+      this.changeVal = this.changeVal.bind(this)
     }
-
-    handleChange(event) {
-      let msg = event.target.value;
-      this.setState({msg});
+    changeVal(e){
+      this.setState({
+        value: e.target.value
+      })
     }
-
-    render() {
-      return (
-          <div>
-            <input type="text" value={this.state.msg} onChange={this.handleChange}/>
-            <p>{this.state.msg}</p>
-          </div>
-      );
+    render(){
+      return(
+        <div>
+          <input type="text" value={this.state.value} onChange={this.changeVal}/>
+          <p>{this.state.value}</p>
+        </div>
+      )
     }
   }
-
   ReactDOM.render(<TwoWay/>, document.getElementById('example'));
 </script>
 </body>

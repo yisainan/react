@@ -38,23 +38,47 @@
     1. 显示h2标题, 初始文本为: 你喜欢我
     2. 点击标题更新为: 我喜欢你
   */
-  class LikeMe extends React.Component {
-    constructor(props) {
-      super(props);
+  // class LikeMe extends React.Component {
+  //   constructor(props) {
+  //     super(props);
+  //     this.state = {
+  //       isLikeMe: false
+  //     };
+  //     this.switchLikeMe = this.switchLikeMe.bind(this);
+  //   }
+
+  //   switchLikeMe() {
+  //     let isLikeMe = !this.state.isLikeMe;
+  //     this.setState({isLikeMe})
+  //   }
+
+  //   render() {
+  //     let text = this.state.isLikeMe ? '你喜欢我' : '我喜欢你';
+  //     return <h2 onClick={this.switchLikeMe}>{text}</h2>;
+  //   }
+  // }
+
+  // ReactDOM.render(<LikeMe/>, document.getElementById('example'));
+
+
+  // 1
+  class LikeMe extends React.Component{
+    constructor(props){
+      super(props)
       this.state = {
-        isLikeMe: false
-      };
-      this.switchLikeMe = this.switchLikeMe.bind(this);
+        flag: false
+      }
+      this.changeFlag = this.changeFlag.bind(this)
     }
-
-    switchLikeMe() {
-      let isLikeMe = !this.state.isLikeMe;
-      this.setState({isLikeMe})
+    changeFlag(){
+      this.setState({
+        flag: !this.state.flag
+      })
     }
-
     render() {
-      let text = this.state.isLikeMe ? '你喜欢我' : '我喜欢你';
-      return <h2 onClick={this.switchLikeMe}>{text}</h2>;
+      return (
+        <div onClick={this.changeFlag}>{this.state.flag ? '1111': '2222'}</div>
+      )
     }
   }
 
