@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<title>Component life cirlce</title>
+    	<script src="react.js"></script>
+    	<script src="react-dom.js"></script>
+    	<script src="browser.min.js"></script>
+    	<style type="text/css">
+    	#container {
+    		padding: 50px;
+    		background-color: #FFF;
+    	}
+    	</style>
+    </head>
+
+    <body>
+    	<div id="container"></div>
+    	<script type="text/babel">
+    	    var destination = document.querySelector("#container");
+
+    	    var Counter = React.createClass({
+
+    	    	componentWillReceiveProps: function(newProps) {
+    	    		console.log("componentWillReceiveProps:Counter receive new pros");
+
+    	    		return;
+    	    	},
+
+    	    	shouldComponentUpdate: function(newProps, newState) {
+    	    		console.log("shouldComponentUpdate:should counter update");
+
+    	    		return true;
+    	    	},
+
+    	    	componentWillUpdate: function() {
+    	    		console.log("componentWillUpdate: counter will update");
+
+    	    		return;
+    	    	},
+
+    	    	componentDidUpdate: function() {
+    	    		console.log("componentDidUpdate: counter did update");
+
+    	    		return;
+    	    	},
+
+    	    	render: function() {
+    	    		var textStyle = {
+    	    			fontSize: 72,
+    	    			fontFamily: "sans-serif",
+    	    			color: "#333",
+    	    			fontWeight: "bold"
+    	    		};
+
+    	    		return (
+    	    			<div style={textStyle}>
+    	    			    {this.props.display}
+    	    			</div>
+    	    			)
+    	    	}
+    	    });
+
+    	    var CounterParent = React.createClass({
+    	    	getDefaultProps : function() {
+    	    		console.log("getDefaultProps: receive props from outsize");
+
+    	    		return {};
+    	    	},
+
+    	    	getInitialState: function() {
+    	    		console.log("getInitialState: set default state object");
+
+    	    		return {
+    	    			count: 0
+    	    		};
+    	    	},
+
+    	    	componentWillMount: function() {
+    	    		console.log("componentWillMount: component will about to mount");
+
+    	    		return;
+    	    	},
+
+    	    	componentDidMount: function() {
+    	    		console.log("componentDidMount: component is just mount");
+    	    		return;
+    	    	},
+
+    	    	increase : function() {
+    	    		this.setState({
+    	    			count: this.state.count + 1
+    	    		});
+    	    	},
+
+    	    	shouldComponentUpdate: function(newPros, newState) {
+    	    		console.log("shouldComponentUpdate: should component update?");
+    	    		if (newState.count < 5) {
+    	    			console.log("Component should update");
+    	    			return true;
+    	    		} else {
+    	    			console.log("component should not update ");
+    	    			ReactDOM.unmountComponentAtNode(destination);
+    	    			return false;
+    	    		}
+    	    	},
+
+    	    	componentWillUnmount: function() {
+    	    		console.log("componentWillUnmount: compoent is removed from dom");
+
+    	    		return;
+    	    	},
+
+    	    	componentWillUpdate: function() {
+    	    		console.log("componentWillUpdate: component is about update");
+
+    	    		return;
+    	    	},
+
+    	    	componentDidUpdate: function() {
+    	    		console.log("componentDidUpdate: component is just updated");
+    	    		return;
+    	    	},
+
+    	    	render: function() {
+    	    		var backgroundStyle = {
+    	    			padding: 50,
+    	    			border: "#333 2px dotted",
+    	    			width: 250,
+    	    			height: 100,
+    	    			borderRadius: 10,
+    	    			textAlign: "center"
+    	    		}
+    	    		
+    	    		return (
+    	    			<div style={backgroundStyle}>
+    	    			    <Counter display={this.state.count} />
+    	    			    <button onClick={this.increase}>
+    	    			        +
+    	    			    </button>
+    	    			</div>
+    	    			);
+    	    	}
+    	    });
+
+    	    ReactDOM.render(
+    	    	<div>
+    	    	    <CounterParent />
+    	    	</div>,
+    	    	destination
+    	    	);
+    	</script>
+    </body>
+</html>

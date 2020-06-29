@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<title>Styling in React</title>
+    	<script src="react.js"></script>
+    	<script src="react-dom.js"></script>
+    	<script src="browser.min.js"></script>
+    	<style type="text/css">
+    	    #container {
+    	    	padding: 50px;
+    	    	background-color: #FFF;
+    	    }
+
+    	  
+    	</style>
+    </head>
+
+    <body>
+    	<div id="container"></div>
+    	<script type="text/babel">
+    	    var Letter = React.createClass({
+    	    
+    	    	render: function() {
+    	    		var letterStyle = {
+    	    		padding: 10,
+    	    		margin: 10,
+    	    		backgroundColor: this.props.bgcolor,
+    	    		color: "#333",
+    	    		display: "inline-block",
+    	    		fontFamily: "monospace",
+    	    		fontSize: 32,
+    	    		textAlign: "center"
+    	    	};
+
+    	    		return (
+    	    			<div style={letterStyle}>
+    	    			    {this.props.children}
+    	    			</div>
+    	    			);
+    	    	}
+    	    });
+
+    	    var destination = document.querySelector("#container");
+    	    ReactDOM.render(
+    	    	<div>
+    	    	    <Letter bgcolor="#58B3FF">T</Letter>
+    	    	    <Letter bgcolor="#FF605F">Y</Letter>
+    	    	    <Letter bgcolor="#FFD52E">L</Letter>
+    	    	    <Letter bgcolor="#49DD8E">E</Letter>
+    	    	    <Letter bgcolor="#AE99FF">R</Letter>
+    	    	</div>,
+    	    	destination
+    	    	)
+    	</script>
+    </body>
+</html>

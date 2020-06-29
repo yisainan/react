@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<title>React Component</title>
+    	<script src="react.js"></script>
+    	<script src="react-dom.js"></script>
+    	<script src="browser.min.js"></script>
+    </head>
+
+    <body>
+    	<div id="container"></div>
+    	<script type="text/babel">
+    	    var HelloWorld = React.createClass({
+    	    	render: function() {
+    	    		return (
+    	    			<div>
+    	    	            <p>Hello, {this.props.greetTarget}</p>
+    	    	        </div>
+    	    			);
+    	    	}
+    	    });
+
+    	    ReactDOM.render(
+    	    	<div>
+    	    	    <HelloWorld greetTarget="Tyler"/>
+    	    	    <HelloWorld greetTarget="Nancy"/>
+    	    	    <HelloWorld greetTarget="Jacket"/>
+    	    	</div>
+    	    	,
+    	    	document.querySelector("#container")
+    	    	);
+    	</script>
+    </body>
+</html>

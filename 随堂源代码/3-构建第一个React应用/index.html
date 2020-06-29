@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello React</title>
+        <script src="react.js"></script>
+        <script src="react-dom.js"></script>
+        <script src="browser.min.js"></script>
+        <style type="text/css">
+            #container {
+                padding: 50px;
+                background-color: #EEE;
+            }
+
+            #container h1 {
+                font-size: 144px;
+                font-family: sans-serif;
+                color: #0080a8;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="container"></div>
+        <script type="text/babel">
+            var destination = document.querySelector("#container");
+            ReactDOM.render(
+                <h1>I am Tyler</h1>,
+                destination
+                )
+        </script>
+    </body>
+</html>

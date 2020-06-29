@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html charset="utf=8">
+    <head>
+        <title>React Single Page App</title>
+        <script src="react.js"></script>
+        <script src="react-dom.js"></script>
+        <script src="browser.min.js"></script>
+        <script src="ReactRouter.min.js"></script>
+        <STYLE TYPE="text/css">
+             body {
+                background-color: #FFCC00;
+                padding: 0;
+                margin: 0;
+             }
+
+             h1, h2, p, ul, li {
+                font-family: Helvetica, Arial, sans-serif;
+             }
+
+             ul.header li {
+                display: inline;
+                list-style-type: none;
+                margin: 0
+             }
+
+             ul.header {
+                background-color: #111;
+                padding: 0
+             }
+
+             ul.header li a{
+                color: #FFF;
+                font-weight: bold;
+                text-decoration: none;
+                padding: 20px;
+                display: inline-block;
+             }
+
+             .content {
+                background-color: #FFF;
+                padding: 20px;
+             }
+
+             .conent h2 {
+                padding: 0;
+                margin: 0;
+             }
+
+             .content li {
+                margin-bottom: 10px;
+             }
+
+             .active {
+                background-color: #0099FF;
+             }
+        </STYLE>
+    </head>
+
+    <body>
+        <div id="container"></div>
+        <script type="text/babel">
+            var {
+                Router,
+                Route,
+                IndexRoute,
+                IndexLink,
+                Link,
+                hashHistory
+            } = ReactRouter;
+
+            var destination = document.querySelector("#container");
+            var Home = React.createClass({
+                render: function() {
+                    return (
+                        <div>
+                            <h2>望天门山</h2>
+                            <p>天门中断楚江开,碧水东流至此回</p>
+                            <p>两岸青山相对出,孤帆一片日边来</p>
+                        </div>
+                        );
+                }
+            });
+
+            var Dufu = React.createClass({
+                render: function() {
+                    return (
+                        <div>
+                           <h2>登高</h2>
+                           <p>风急天高猿啸衰,渚清沙白鸟飞回</p>
+                           <p>无边落木萧萧下,不尽长江滚滚来</p>
+                           <p>万里悲秋常作客,百年多病独登台</p>
+                           <p>艰难苦恨繁霜鬓,潦倒新停浊酒杯</p>
+                        </div>
+                        );
+                }
+            });
+
+            var Lsy = React.createClass({
+                render: function() {
+                    return (
+                        <div>
+                            <h2>锦瑟</h2>
+                            <ol>
+                               <li>锦瑟无端五十弦,一弦一柱思华年</li>
+                               <li>庄生晓梦迷蝴蝶,望帝春心托杜鹃</li>
+                               <li>沧海月明珠有泪,蓝田日暖玉生烟</li>
+                               <li>此情可待成追忆,只是当时已惘然</li>
+                            </ol>
+                        </div>
+                        )
+                }
+            });
+
+            var App = React.createClass({
+                render: function() {
+                    return (
+                        <div>
+                            <h1>Simple SAP</h1>
+                            <ul className="header">
+                                <li>
+                                <IndexLink
+                                 activeClassName="active"
+                                 to="/">李白</IndexLink></li>
+                                <li><Link 
+                                activeClassName="active"
+                                to="/df">杜甫
+                                </Link></li>
+                                <li><Link 
+                                activeClassName="active"
+                                to="/lsy">李商隐
+                                </Link></li>
+                            </ul>
+
+                            <div className="content">
+                                {this.props.children}
+                            </div>
+                        </div>
+                        );
+                }
+            });
+
+            ReactDOM.render(
+                <Router  history={hashHistory}>
+                    <Route path="/" 
+                    component={App}>
+                       <IndexRoute component={Home}/>
+                       <Route path="df" component={Dufu}/>
+                       <Route path="lsy" component={Lsy}/>
+                    </Route>
+
+                </Router>
+                ,destination
+                );
+        </script>
+    </body>
+</html>

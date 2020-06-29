@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<title>Property transfer</title>
+    	<script src="react.js"></script>
+    	<script src="react-dom.js"></script>
+    	<script src="browser.min.js"></script>
+    </head>
+
+    <body>
+    	<div id="container"></div>
+    	<script type="text/babel">
+    	    var destination = document.querySelector("#container");
+
+    	    var Display = React.createClass({
+    	    	render: function() {
+    	    		return (
+    	    		<div>
+    	    		    <p>{this.props.color}</p>
+    	    		    <p>{this.props.num}</p>
+    	    		    <p>{this.props.size}</p>
+    	    		</div>
+    	    		);
+    	    	}
+    	    });
+
+    	    var Label = React.createClass({
+    	    	render: function() {
+    	    		return (
+    	    			<Display {...this.props} />
+    	    			);
+    	    		
+    	    	}
+    	    });
+
+    	    var Shirt = React.createClass({
+    	    	render: function() {
+    	    		return (
+    	    			<Label {...this.props}/>
+    	    			);
+    	    	}
+    	    });
+
+
+    	    ReactDOM.render(
+    	    	<div>
+    	    	    <Shirt color="deepblue" num="3.14" size = "medium"/>
+    	    	</div>,
+    	    	destination
+    	    	);
+    	</script>
+    </body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html charset="utf-8">
+    <head>
+    	<title>Component state!</title>
+    	<script src="react.js"></script>
+    	<script src="react-dom.js"></script>
+    	<script src="browser.min.js"></script>
+    </head>
+
+    <body>
+    	<div id="container"></div>
+    	<script type="text/babel">
+    	    var destination = document.querySelector(
+    	    	"#container");
+
+    	    var LightningCounter = React.createClass({
+    	    	getInitialState : function() {
+    	    		return {
+    	    			strikes: 0
+    	    		};
+    	    	},
+
+    	    	timerTick: function() {
+    	    		this.setState({
+    	    			strikes: this.state.strikes + 100
+    	    		});
+    	    	},
+
+    	    	componentDidMount : function() {
+    	    		setInterval(this.timerTick, 1000);
+    	    	},
+
+    	    	render: function() {
+    	    		var counterStyle = {
+    	    			color: "#66FFFF",
+    	    			fontSize: 50
+    	    		}
+    	    		var count = this.state.strikes.toLocaleString();
+    	    		return (
+    	    			<h1 style={counterStyle}>{count}</h1>
+    	    			);
+    	    	}
+    	    });
+
+    	    var LightningCounterDisplay = React.createClass({
+    	    	render: function() {
+    	    		var commonStyle = {
+    	    			margin: 0,
+    	    			padding: 0
+    	    		};
+
+    	    		var divStyle = {
+    	    			width: 250,
+    	    			textAlign: "center",
+    	    			backgroundColor: "black",
+    	    			padding: 40,
+    	    			color: "#999",
+    	    			fontFamily: "sans-serif",
+    	    			borderRadius: 10
+    	    		};
+
+    	    		var textStyle = {
+    	    			emphasis: {
+    	    				fontSize: 38,
+    	    				...commonStyle
+    	    			},
+
+    	    			smallEmpasis: {
+    	    				...commonStyle
+    	    			},
+
+    	    			small: {
+    	    				fontSize:17,
+    	    				opacity: 0.5,
+    	    				...commonStyle
+    	    			}
+    	    		};
+
+    	    		return (
+    	    			<div style={divStyle}>
+    	    			    <LightningCounter/>
+    	    			    <h2 style={textStyle.smallEmpasis}>
+    	    			    雷霆打击
+    	    			    </h2>
+    	    			    <h2 style={textStyle.emphasis}>
+    	    			        我们的地球
+    	    			    </h2>
+
+    	    			    <p style={textStyle.smallEmpasis}>
+    	    			    (自从你加载这个组件之后)
+    	    			    </p>
+    	    			</div>
+    	    			);
+    	    	}
+    	    });
+
+    	    ReactDOM.render(
+    	    	<LightningCounterDisplay/>,
+    	    	destination
+    	    	)
+    	</script>
+    </body>
+</html>

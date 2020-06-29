@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<title>Compositive Card Component</title>
+    	<script src="react.js"></script>
+    	<script src="react-dom.js"></script>
+    	<script src="browser.min.js"></script>
+    	<style type="text/css">
+    	    #container {
+    	    	padding: 50px;
+    	    	background-color: #FFF;
+    	    }
+    	</style>
+    </head>
+
+    <body>
+    	<div id="container">
+    	</div>
+    	<script type="text/babel">
+    	    var destination = document.querySelector("#container");
+    	    var Square = React.createClass({
+    	    	render: function() {
+    	    		var squareStyle = {
+    	    			height: 150,
+    	    			backgroundColor: this.props.color
+    	    		};
+
+    	    		return (
+    	    			<div style={squareStyle}>
+    	    			</div>
+    	    			);
+    	    	}
+    	    });
+
+    	    var Label = React.createClass({
+    	    	render: function() {
+    	    		var labelStyle = {
+    	    			fontFamily: "sans-serif",
+    	    			fontWeight: "bold",
+    	    			padding: 13,
+    	    			margin: 0
+    	    		};
+
+    	    		return (
+    	    			<div style={labelStyle}>
+    	    			    <p>{this.props.color}</p>
+    	    			</div>
+    	    			);
+    	    	}
+    	    });
+
+    	    var Card = React.createClass({
+    	    	render: function() {
+    	    		var cardStyle = {
+    	    			height: 200,
+    	    			width: 150,
+    	    			backgroundColor: "#FFF",
+    	    			WebkitFilter: "drop-shadow(0px 0px 5px #666)",
+    	    			filter: "drop-shadow(0px 0px 5px #666)"
+    	    		};
+
+    	    		return (
+    	    			<div style={cardStyle}>
+    	    			    <Square color={this.props.color}/>
+    	    			    <Label color={this.props.color}/>
+    	    			</div>
+    	    			);
+    	    	}
+    	    });
+
+    	    ReactDOM.render(
+    	    	<div>
+    	    	    <Card color="#FFA737"/>
+    	    	</div>,
+    	    	destination
+    	    	);
+    	</script>
+    </body>
+</html>
